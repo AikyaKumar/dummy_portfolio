@@ -62,15 +62,11 @@ section h2{font-size:clamp(28px,4vw,42px);margin-bottom:12px}
 .cta{background:var(--space);color:#fff;text-align:center}
 .cta h2{margin-bottom:14px}.cta p{color:#cfd9f5;max-width:50ch;margin:0 auto 28px}
 footer{background:var(--space);color:#8d9bc4;text-align:center;padding:0 0 36px;font-size:14px}
-.ph{overflow:hidden;border-radius:var(--r);aspect-ratio:1;background:#dfe6f5;margin-bottom:22px}
-.ph img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(var(--z,1));transform-origin:var(--ox,50%) var(--oy,50%)}
-.ph.about{--z:1.5;--ox:50%;--oy:53%}
-.ph.about img{object-position:50% 45%}
-.ph.contact{width:150px;border-radius:50%;margin:0 auto 24px;border:3px solid #3b4a7a;--z:1.9;--ox:63%;--oy:60%}
-.ph.contact img{object-position:50% 55%}
-.ph.autumn{aspect-ratio:4/5;margin:0}.ph.autumn img{object-position:50% 35%}
-@media(max-width:760px){.about,.feature{grid-template-columns:1fr}nav div a:not(:last-child){display:none}section{padding:64px 0}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+.ph{overflow:hidden;border-radius:var(--r);background:#dfe6f5;margin-bottom:22px}
+.ph img{width:100%;height:auto;display:block}
+.ph.contact{width:150px;aspect-ratio:1;border-radius:50%;margin:0 auto 24px;border:3px solid #3b4a7a}
+.ph.contact img{height:100%;object-fit:cover}
+.ph.autumn{margin:0}
 </style>
 </head>
 <body>
@@ -96,7 +92,7 @@ footer{background:var(--space);color:#8d9bc4;text-align:center;padding:0 0 36px;
 <p><strong>I can explain models to non-technical teams.</strong> I presented my thesis results to Lufthansa’s network planning team and worked daily with commercial colleagues.</p><br>
 <p><strong>I’m drawn to life sciences.</strong> I contributed to an open-source pharma AI agent project, and I attend bioinformatics and cancer research talks at DKFZ in my spare time.</p>
 </div>
-<aside><div class="ph about"><img src="assets/about.jpeg" alt="Aikya Sira Kumar" onerror="this.parentNode.remove()"></div><h3>Quick facts</h3><ul>
+<aside><div class="ph"><img src="assets/about.jpeg" alt="Aikya Sira Kumar" onerror="this.parentNode.remove()"></div><h3>Quick facts</h3><ul>
 <li>M.Sc. Applied Data Science and Analytics, SRH University Heidelberg (2026)</li>
 <li>Data Science Intern, Lufthansa Group (2026)</li>
 <li>2 years as Data Analyst, Capgemini</li>
