@@ -81,4 +81,110 @@ footer{background:var(--space);color:#8d9bc4;text-align:center;padding:0 0 36px;
 <div class="wrap">
 <p class="hi">Hi, I’m Aikya Sira Kumar.</p>
 <h1>I turn airline and health data into decisions.</h1>
-<p
+<p class="sub">Data scientist working on ML, GenAI and graph learning. My master’s thesis with Lufthansa Group modelled airline networks with graph neural networks, and I build data pipelines that run in production.</p>
+<a class="btn main" href="#work">See my work</a><a class="btn" href="assets/resume.pdf">Download resume</a><a class="btn" href="#contact">Hire me</a>
+<br><span class="tag"><span class="dot"></span>Open to full-time roles · Mannheim · available now</span>
+</div>
+</header>
+
+<main>
+<section id="about"><div class="wrap about">
+<div>
+<h2>Three things you should know about me</h2>
+<p class="lead">I like problems where data has a shape: flight networks, orbits, molecules. Here is what that looks like in practice.</p>
+<p><strong>I work on real airline data at scale.</strong> At Lufthansa Group I worked with about 300 million booking records and a quarterly pipeline that cut its runtime by about 30% after I rebuilt it on Azure ML.</p><br>
+<p><strong>I can explain models to non-technical teams.</strong> I presented my thesis results to Lufthansa’s network planning team and worked daily with commercial colleagues.</p><br>
+<p><strong>I’m drawn to life sciences.</strong> I contributed to an open-source pharma AI agent project, and I attend bioinformatics and cancer research talks at DKFZ in my spare time.</p>
+</div>
+<aside><div class="ph about"><img src="assets/about.jpg" alt="Aikya Sira Kumar" onerror="this.parentNode.remove()"></div><h3>Quick facts</h3><ul>
+<li>M.Sc. Applied Data Science and Analytics, SRH University Heidelberg (2026)</li>
+<li>Data Science Intern, Lufthansa Group (2026)</li>
+<li>2 years as Data Analyst, Capgemini</li>
+<li>English C1, German B1</li>
+<li>Python, SQL, Databricks, PyTorch, Spark, Azure ML, dbt, Tableau</li></ul></aside>
+</div></section>
+
+<section id="work" style="padding-top:0"><div class="wrap">
+<h2>Selected work</h2>
+<p class="lead">Two flagship projects first, then smaller builds.</p>
+
+<article class="feature">
+<div><h3>Graph neural networks for airline networks</h3>
+<p>Master thesis with Lufthansa Group. I joined airline schedule data with ticketing data into one heterogeneous graph and trained an inductive GraphSAGE model to forecast passenger demand.</p>
+<div class="chips"><span>PyTorch Geometric</span><span>PySpark</span><span>Databricks</span><span>GraphSAGE</span></div></div>
+<ul><li>R² of 0.846 on a season the model never saw</li><li>Generalises to airports not seen in training</li><li>Vulnerability analysis shows which airports hurt the network most when removed, with alternative routes suggested</li><li>Presented to the network planning team</li></ul>
+</article>
+
+<article class="feature">
+<div><h3>Customer segmentation at 300M records</h3>
+<p>Internship project at Lufthansa Group. I classified travellers as corporate or leisure and moved the quarterly process onto an Azure ML MLOps framework.</p>
+<div class="chips"><span>XGBoost</span><span>Azure ML</span><span>Azure Data Factory</span><span>Delta Tables</span></div></div>
+<ul><li>99.78% accuracy with XGBoost on booking data</li><li>Pipeline runtime cut by about 30%</li><li>Ran a knowledge-transfer session and documented the work for the team</li></ul>
+</article>
+
+<div class="grid">
+<div class="card"><h3>AI Agents 4 Pharma</h3><p>Open-source contributor. Added bioRxiv and medRxiv sources and built a multimodal pipeline with NVIDIA NeMo Retriever and PaddleOCR.</p><div class="chips"><span>LLM agents</span><span>OCR</span><span>Life sciences</span></div></div>
+<div class="card"><h3>NYC taxi demand and weather</h3><p>ELT on GCP over 1M+ trips, dbt marts and Tableau dashboards on how weather shifts demand.</p><div class="chips"><span>GCP</span><span>dbt</span><span>Tableau</span></div></div>
+<div class="card"><h3>EventCast</h3><p>Predicts sunny or shaded conditions for outdoor events from live weather and map data, streamed through Kafka into a Streamlit app.</p><div class="chips"><span>Kafka</span><span>Random Forest</span><span>Docker</span></div></div>
+<div class="card"><h3>Satellite image classification</h3><p>Custom CNN sorting 4,000+ satellite images into cloud, desert, green area and water, at 80–90% validation accuracy.</p><div class="chips"><span>CNN</span><span>Augmentation</span></div></div>
+</div>
+<p class="lead" style="margin-top:24px">More on <a href="https://github.com/AikyaKumar">GitHub</a>. <!-- TODO: add repo links to each card -->
+</p>
+</div></section>
+
+<section id="experience" style="background:#fff"><div class="wrap">
+<h2>Experience and education</h2>
+<p class="lead">Most recent first.</p>
+<div class="tl">
+<div class="job"><time>Jan 2026 – Sep 2026 · Frankfurt</time><h3>Data Science Intern, Lufthansa Group</h3><ul><li>Built an Azure ML MLOps framework for a quarterly customer segmentation process, cutting runtime by about 30%</li><li>Classified corporate and leisure travellers on about 300M booking records</li><li>Built Databricks pipelines with Delta Tables, Unity Catalog and Azure Data Factory</li></ul></div>
+<div class="job"><time>Apr 2026 – Sep 2026</time><h3>Master thesis, Lufthansa Group</h3><ul><li>GraphSAGE demand forecasting and network vulnerability analysis (see above)</li></ul></div>
+<div class="job"><time>Sep 2022 – Sep 2024 · Hyderabad</time><h3>Senior Data Analyst, Capgemini</h3><ul><li>Built KPI monitoring and validation workflows that supported 99.9% availability for a restaurant platform</li><li>Python and SQL pipelines across 3,000+ websites</li><li>Promoted to Senior Data Analyst</li></ul></div>
+<div class="job"><time>2024 – 2026 · Heidelberg</time><h3>M.Sc. Applied Data Science and Analytics, SRH University</h3></div>
+<div class="job"><time>2018 – 2022 · Tumkur, India</time><h3>B.E. Telecommunications Engineering, SSIT</h3></div>
+</div></div></section>
+
+<section id="beyond"><div class="wrap">
+<h2>Beyond the job</h2>
+<p class="lead">Space, flight and health keep showing up in what I do for fun too.</p>
+<div class="grid">
+<div class="ph autumn"><img src="assets/autumn.jpg" alt="Aikya on a bridge among autumn trees" loading="lazy" onerror="this.parentNode.remove()"></div>
+<div class="card"><h3>NASA Space Apps</h3><p>Took part in 2025 and joining again in 2026.</p></div>
+<div class="card"><h3>Healthcare hackathon, Pristina</h3><p>My team built iSpace, a shared 3D space for healthcare and education, together with nurses, doctors and IT specialists.</p></div>
+<div class="card"><h3>Stargazing and painting</h3><p>I chase Saturn and Venus sightings, and paint to switch off.</p></div>
+</div></div></section>
+
+<section class="cta" id="contact"><div class="wrap">
+<div class="ph contact"><img src="assets/contact.jpg" alt="Aikya smiling" loading="lazy" onerror="this.parentNode.remove()"></div>
+<h2>Looking for a data scientist who ships?</h2>
+<p>I’m available now for full-time roles in aviation, life sciences and applied AI, based in Mannheim.</p>
+<a class="btn main" href="mailto:aikyasirakumar04@gmail.com">Email me</a>
+<a class="btn" href="https://www.linkedin.com/in/aikya-sira-kumar/">LinkedIn</a>
+<a class="btn" href="https://github.com/AikyaKumar">GitHub</a>
+</div></section>
+</main>
+<footer>© 2026 Aikya Sira Kumar</footer>
+
+<script>
+(function(){
+var c=document.getElementById('sky'),x=c.getContext('2d'),W,H,stars=[],t=0;
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+// lon,lat of airports: Frankfurt, Hyderabad, Singapore, New York, Sao Paulo, Dubai
+var ap=[[8.6,50],[78.4,17.2],[104,1.4],[-73.8,40.6],[-46.5,-23.4],[55.4,25.2]];
+var routes=[[0,1],[0,3],[0,5],[5,2],[0,4],[1,2]];
+function size(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;
+stars=[];for(var i=0;i<Math.round(W*H/5000);i++)stars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.3+.2,p:Math.random()*6});}
+function pt(a){return[(a[0]+180)/360*W,(90-a[1])/180*H*.9+H*.05]}
+function draw(){x.clearRect(0,0,W,H);
+stars.forEach(function(s){x.globalAlpha=reduce?.7:.35+.65*Math.abs(Math.sin(t/60+s.p));x.fillStyle='#fff';x.beginPath();x.arc(s.x,s.y,s.r,0,7);x.fill()});
+x.globalAlpha=1;
+routes.forEach(function(r,i){var a=pt(ap[r[0]]),b=pt(ap[r[1]]),mx=(a[0]+b[0])/2,my=Math.min(a[1],b[1])-Math.abs(a[0]-b[0])*.22;
+x.strokeStyle='rgba(156,194,255,.28)';x.lineWidth=1;x.beginPath();x.moveTo(a[0],a[1]);x.quadraticCurveTo(mx,my,b[0],b[1]);x.stroke();
+var u=reduce?.5:((t/240+i*.17)%1),px=(1-u)*(1-u)*a[0]+2*(1-u)*u*mx+u*u*b[0],py=(1-u)*(1-u)*a[1]+2*(1-u)*u*my+u*u*b[1];
+x.fillStyle='#9cc2ff';x.beginPath();x.arc(px,py,2.6,0,7);x.fill()});
+ap.forEach(function(p){var q=pt(p);x.fillStyle='#fff';x.beginPath();x.arc(q[0],q[1],3,0,7);x.fill()});
+t++;if(!reduce)requestAnimationFrame(draw)}
+size();draw();addEventListener('resize',function(){size();if(reduce)draw()});
+})();
+</script>
+</body>
+</html>
