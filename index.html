@@ -12,14 +12,14 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#14213d;--muted:#55607a;--bg:#f3f5f9;--card:#fff;--line:#d9dfeb;--sky:#2f6fed;--space:#070b1a;--glow:#9cc2ff;--r:14px}
+:root{--ink:#14213d;--muted:#55607a;--bg:#f3f5f9;--card:#fff;--line:#d9dfeb;--sky:#2f6fed;--space:#070b1a;--glow:#9cc2ff;--r:14px;--r-lg:22px}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:smooth}
 body{font:17px/1.65 "IBM Plex Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg)}
 h1,h2,h3{font-family:"Space Grotesk",system-ui,sans-serif;line-height:1.15}
 a{color:var(--sky)}
 :focus-visible{outline:3px solid var(--sky);outline-offset:3px}
-.wrap{max-width:1040px;margin:0 auto;padding:0 24px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
 nav{position:fixed;inset:0 0 auto;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:rgba(7,11,26,.72);backdrop-filter:blur(8px);color:#fff}
 nav b{font-family:"Space Grotesk";font-size:18px}
 nav div a{color:#cfd9f5;text-decoration:none;margin-left:20px;font-size:15px}
@@ -49,10 +49,136 @@ section h2{font-size:clamp(28px,4vw,42px);margin-bottom:12px}
 .about aside{background:var(--space);color:#cfd9f5;border-radius:var(--r);padding:26px}
 .about aside h3{color:#fff;margin-bottom:10px}
 .about aside li{margin:8px 0 8px 18px}
-.feature{display:grid;gap:26px;grid-template-columns:1fr 1fr;background:var(--space);color:#e6ecff;border-radius:var(--r);padding:34px;margin-bottom:20px}
-.feature h3{color:#fff;font-size:26px;margin-bottom:10px}
-.feature .chips span{background:#1b2a5c;color:#bcd0ff}
-.feature ul{margin-left:18px}.feature li{margin:8px 0}
+
+/* --- Split Project Card Styles --- */
+.project-list{display:flex;flex-direction:column;gap:36px}
+.project-card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:var(--r-lg);
+  padding:24px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:32px;
+  align-items:center;
+  box-shadow:0 8px 30px rgba(0,0,0,0.03);
+}
+.project-card.reversed{
+  grid-template-columns:1fr 1fr;
+}
+.project-card.reversed .project-visual{
+  order:2;
+}
+.project-card.reversed .project-body{
+  order:1;
+}
+.project-visual{
+  background:#f8faff;
+  border:1px solid #e1e7f5;
+  border-radius:var(--r);
+  min-height:360px;
+  height:100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px;
+  overflow:hidden;
+}
+.project-visual img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  border-radius:calc(var(--r) - 4px);
+  display:block;
+}
+.project-visual .placeholder-box{
+  text-align:center;
+  color:var(--muted);
+  font-size:14px;
+}
+.project-visual .placeholder-box svg{
+  display:block;
+  margin:0 auto 10px;
+  stroke:var(--sky);
+}
+.project-body{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  padding:8px 4px;
+}
+.project-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-size:13px;
+  font-weight:700;
+  color:var(--muted);
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  margin-bottom:12px;
+}
+.project-body h3{
+  font-size:clamp(22px,2.2vw,28px);
+  margin-bottom:12px;
+  color:var(--ink);
+}
+.project-desc{
+  color:var(--muted);
+  font-size:16px;
+  margin-bottom:16px;
+}
+.project-features-title{
+  font-size:12px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.06em;
+  color:var(--ink);
+  margin-bottom:8px;
+}
+.project-features{
+  margin:0 0 20px 20px;
+  color:var(--muted);
+  font-size:15px;
+}
+.project-features li{
+  margin-bottom:6px;
+}
+.project-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-top:16px;
+  padding-top:16px;
+  border-top:1px solid #eef2fa;
+}
+.project-links a{
+  font-size:14px;
+  font-weight:500;
+  text-decoration:none;
+  margin-left:14px;
+  color:var(--sky);
+}
+.project-links a:hover{
+  text-decoration:underline;
+}
+
+@media(max-width:860px){
+  .project-card, .project-card.reversed{
+    grid-template-columns:1fr;
+  }
+  .project-card.reversed .project-visual{
+    order:0;
+  }
+  .project-card.reversed .project-body{
+    order:1;
+  }
+  .project-visual{
+    min-height:240px;
+  }
+}
+/* ---------------------------------- */
+
 .tl{border-left:2px solid var(--line);margin-left:6px}
 .job{position:relative;padding:0 0 38px 28px}
 .job::before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--sky)}
@@ -62,15 +188,11 @@ section h2{font-size:clamp(28px,4vw,42px);margin-bottom:12px}
 .cta{background:var(--space);color:#fff;text-align:center}
 .cta h2{margin-bottom:14px}.cta p{color:#cfd9f5;max-width:50ch;margin:0 auto 28px}
 footer{background:var(--space);color:#8d9bc4;text-align:center;padding:0 0 36px;font-size:14px}
-.ph{overflow:hidden;border-radius:var(--r);aspect-ratio:1;background:#dfe6f5;margin-bottom:22px}
-.ph img{width:100%;height:100%;object-fit:cover;display:block;transform:scale(var(--z,1));transform-origin:var(--ox,50%) var(--oy,50%)}
-.ph.about{--z:1.5;--ox:50%;--oy:53%}
-.ph.about img{object-position:50% 45%}
-.ph.contact{width:150px;border-radius:50%;margin:0 auto 24px;border:3px solid #3b4a7a;--z:1.9;--ox:63%;--oy:60%}
-.ph.contact img{object-position:50% 55%}
-.ph.autumn{aspect-ratio:4/5;margin:0}.ph.autumn img{object-position:50% 35%}
-@media(max-width:760px){.about,.feature{grid-template-columns:1fr}nav div a:not(:last-child){display:none}section{padding:64px 0}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+.ph{overflow:hidden;border-radius:var(--r);background:#dfe6f5;margin-bottom:22px}
+.ph img{width:100%;height:auto;display:block}
+.ph.contact{width:150px;aspect-ratio:1;border-radius:50%;margin:0 auto 24px;border:3px solid #3b4a7a}
+.ph.contact img{height:100%;object-fit:cover}
+.ph.autumn{margin:0}
 </style>
 </head>
 <body>
@@ -81,4 +203,200 @@ footer{background:var(--space);color:#8d9bc4;text-align:center;padding:0 0 36px;
 <div class="wrap">
 <p class="hi">Hi, I’m Aikya Sira Kumar.</p>
 <h1>I turn airline and health data into decisions.</h1>
-<p
+<p class="sub">Data scientist working on ML, GenAI and graph learning. My master’s thesis with Lufthansa Group modelled airline networks with graph neural networks, and I build data pipelines that run in production.</p>
+<a class="btn main" href="#work">See my work</a><a class="btn" href="assets/resume.pdf">Download resume</a><a class="btn" href="#contact">Hire me</a>
+<br><span class="tag"><span class="dot"></span>Open to full-time roles · Mannheim · available now</span>
+</div>
+</header>
+
+<main>
+<section id="about"><div class="wrap about">
+<div>
+<h2>Three things you should know about me</h2>
+<p class="lead">I like problems where data has a shape: flight networks, orbits, molecules. Here is what that looks like in practice.</p>
+<p><strong>I work on real airline data at scale.</strong> At Lufthansa Group I worked with about 300 million booking records and a quarterly pipeline that cut its runtime by about 30% after I rebuilt it on Azure ML.</p><br>
+<p><strong>I can explain models to non-technical teams.</strong> I presented my thesis results to Lufthansa’s network planning team and worked daily with commercial colleagues.</p><br>
+<p><strong>I’m drawn to life sciences.</strong> I contributed to an open-source pharma AI agent project, and I attend bioinformatics and cancer research talks at DKFZ in my spare time.</p>
+</div>
+<aside><div class="ph"><img src="assets/about.jpeg" alt="Aikya Sira Kumar" onerror="this.parentNode.remove()"></div><h3>Quick facts</h3><ul>
+<li>M.Sc. Applied Data Science and Analytics, SRH University Heidelberg (2026)</li>
+<li>Data Science Intern, Lufthansa Group (2026)</li>
+<li>2 years as Data Analyst, Capgemini</li>
+<li>English C1, German B1</li>
+<li>Python, SQL, Databricks, PyTorch, Spark, Azure ML, dbt, Tableau</li></ul></aside>
+</div></section>
+
+<section id="work" style="padding-top:0"><div class="wrap">
+<h2>Selected work</h2>
+<p class="lead">Explore architectures, machine learning models, and engineering implementations.</p>
+
+<div class="project-list">
+
+  <!-- Project 01 -->
+  <article class="project-card">
+    <div class="project-visual">
+      <!-- Replace with <img src="assets/gnn-architecture.png" alt="Airline GNN Flowchart"> -->
+      <div class="placeholder-box">
+        <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        <span>Add Flowchart / Architecture Image</span>
+      </div>
+    </div>
+    <div class="project-body">
+      <div class="project-meta">
+        <span>01</span>
+        <span>Graph Learning · Aviation</span>
+      </div>
+      <h3>Graph Neural Networks for Airline Networks</h3>
+      <p class="project-desc">Master thesis with Lufthansa Group. Joined airline schedules with ticketing records into a unified heterogeneous graph and trained an inductive GraphSAGE architecture to forecast passenger demand.</p>
+      
+      <p class="project-features-title">Key Highlights:</p>
+      <ul class="project-features">
+        <li>Achieved <strong>0.846 R²</strong> on unseen validation seasons</li>
+        <li>Inductive learning generalises to completely new airport nodes</li>
+        <li>Network vulnerability analysis highlights critical disruption points with alternative route rerouting</li>
+        <li>Delivered and defended directly to the Network Planning team</li>
+      </ul>
+
+      <div class="chips">
+        <span>PyTorch Geometric</span><span>PySpark</span><span>Databricks</span><span>GraphSAGE</span>
+      </div>
+      <div class="project-footer">
+        <span style="font-size:13px;color:var(--muted)">Lufthansa Group</span>
+        <div class="project-links">
+          <a href="#contact">Request Thesis</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Project 02 -->
+  <article class="project-card reversed">
+    <div class="project-visual">
+      <!-- Replace with <img src="assets/segmentation-pipeline.png" alt="Azure ML Architecture"> -->
+      <div class="placeholder-box">
+        <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        <span>Add Pipeline Architecture / Diagram</span>
+      </div>
+    </div>
+    <div class="project-body">
+      <div class="project-meta">
+        <span>02</span>
+        <span>MLOps · Big Data</span>
+      </div>
+      <h3>Customer Segmentation at 300M Records</h3>
+      <p class="project-desc">Internship project at Lufthansa Group. Classified travellers into corporate versus leisure personas and migrated manual quarterly batch jobs into an automated Azure ML MLOps pipeline.</p>
+      
+      <p class="project-features-title">Key Highlights:</p>
+      <ul class="project-features">
+        <li><strong>99.78% accuracy</strong> using an optimized XGBoost classifier</li>
+        <li>Overhaul cut total runtime by ~30% with Azure Data Factory orchestration</li>
+        <li>Built on Unity Catalog, Delta Lake and Databricks</li>
+        <li>Conducted knowledge-transfer and handed off production documentation</li>
+      </ul>
+
+      <div class="chips">
+        <span>XGBoost</span><span>Azure ML</span><span>ADF</span><span>Delta Tables</span>
+      </div>
+      <div class="project-footer">
+        <span style="font-size:13px;color:var(--muted)">Production Workflow</span>
+        <div class="project-links">
+          <a href="#contact">Read Overview</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Project 03 -->
+  <article class="project-card">
+    <div class="project-visual">
+      <!-- Replace with <img src="assets/pharma-agent.png" alt="AI Agent Workflow"> -->
+      <div class="placeholder-box">
+        <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
+        <span>Add Agent Flow / Screenshot</span>
+      </div>
+    </div>
+    <div class="project-body">
+      <div class="project-meta">
+        <span>03</span>
+        <span>GenAI · Life Sciences</span>
+      </div>
+      <h3>AI Agents 4 Pharma</h3>
+      <p class="project-desc">Open-source contribution to multi-agent pipelines for biological and chemical literature parsing. Added bioRxiv and medRxiv integration for scientific document indexing.</p>
+      
+      <p class="project-features-title">Key Highlights:</p>
+      <ul class="project-features">
+        <li>Built multimodal indexing using NVIDIA NeMo Retriever and PaddleOCR</li>
+        <li>Empowered researchers to query preprint repositories via autonomous agents</li>
+        <li>Integrated structured output parsing for pharmacological entities</li>
+      </ul>
+
+      <div class="chips">
+        <span>LLM Agents</span><span>PaddleOCR</span><span>NeMo Retriever</span>
+      </div>
+      <div class="project-footer">
+        <span style="font-size:13px;color:var(--muted)">Open Source</span>
+        <div class="project-links">
+          <a href="https://github.com/AikyaKumar" target="_blank" rel="noopener">GitHub Repo ↗</a>
+        </div>
+      </div>
+    </div>
+  </article>
+
+</div>
+</div></section>
+
+<section id="experience" style="background:#fff"><div class="wrap">
+<h2>Experience and education</h2>
+<p class="lead">Most recent first.</p>
+<div class="tl">
+<div class="job"><time>Jan 2026 – Sep 2026 · Frankfurt</time><h3>Data Science Intern, Lufthansa Group</h3><ul><li>Built an Azure ML MLOps framework for a quarterly customer segmentation process, cutting runtime by about 30%</li><li>Classified corporate and leisure travellers on about 300M booking records</li><li>Built Databricks pipelines with Delta Tables, Unity Catalog and Azure Data Factory</li></ul></div>
+<div class="job"><time>Apr 2026 – Sep 2026</time><h3>Master thesis, Lufthansa Group</h3><ul><li>GraphSAGE demand forecasting and network vulnerability analysis (see above)</li></ul></div>
+<div class="job"><time>Sep 2022 – Sep 2024 · Hyderabad</time><h3>Senior Data Analyst, Capgemini</h3><ul><li>Built KPI monitoring and validation workflows that supported 99.9% availability for a restaurant platform</li><li>Python and SQL pipelines across 3,000+ websites</li><li>Promoted to Senior Data Analyst</li></ul></div>
+<div class="job"><time>2024 – 2026 · Heidelberg</time><h3>M.Sc. Applied Data Science and Analytics, SRH University</h3></div>
+<div class="job"><time>2018 – 2022 · Tumkur, India</time><h3>B.E. Telecommunications Engineering, SSIT</h3></div>
+</div></div></section>
+
+<section id="beyond"><div class="wrap">
+<h2>Beyond the job</h2>
+<p class="lead">Space, flight and health keep showing up in what I do for fun too.</p>
+<div class="grid">
+<div class="ph autumn"><img src="assets/autumn.jpeg" alt="Aikya on a bridge among autumn trees" loading="lazy" onerror="this.parentNode.remove()"></div>
+<div class="card"><h3>NASA Space Apps</h3><p>Took part in 2025 and joining again in 2026.</p></div>
+<div class="card"><h3>Healthcare hackathon, Pristina</h3><p>My team built iSpace, a shared 3D space for healthcare and education, together with nurses, doctors and IT specialists.</p></div>
+<div class="card"><h3>Stargazing and painting</h3><p>I chase Saturn and Venus sightings, and paint to switch off.</p></div>
+</div></div></section>
+
+<section class="cta" id="contact"><div class="wrap">
+<div class="ph contact"><img src="assets/contact.jpeg" alt="Aikya smiling" loading="lazy" onerror="this.parentNode.remove()"></div>
+<h2>Looking for a data scientist who ships?</h2>
+<p>I’m available now for full-time roles in aviation, life sciences and applied AI, based in Mannheim.</p>
+<a class="btn main" href="mailto:aikyasirakumar04@gmail.com">Email me</a>
+<a class="btn" href="https://www.linkedin.com/in/aikya-sira-kumar/">LinkedIn</a>
+<a class="btn" href="https://github.com/AikyaKumar">GitHub</a>
+</div></section>
+</main>
+<footer>© 2026 Aikya Sira Kumar</footer>
+
+<script>
+(function(){
+var c=document.getElementById('sky'),x=c.getContext('2d'),W,H,stars=[],t=0;
+var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var ap=[[8.6,50],[78.4,17.2],[104,1.4],[-73.8,40.6],[-46.5,-23.4],[55.4,25.2]];
+var routes=[[0,1],[0,3],[0,5],[5,2],[0,4],[1,2]];
+function size(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;
+stars=[];for(var i=0;i<Math.round(W*H/5000);i++)stars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.3+.2,p:Math.random()*6});}
+function pt(a){return[(a[0]+180)/360*W,(90-a[1])/180*H*.9+H*.05]}
+function draw(){x.clearRect(0,0,W,H);
+stars.forEach(function(s){x.globalAlpha=reduce?.7:.35+.65*Math.abs(Math.sin(t/60+s.p));x.fillStyle='#fff';x.beginPath();x.arc(s.x,s.y,s.r,0,7);x.fill()});
+x.globalAlpha=1;
+routes.forEach(function(r,i){var a=pt(ap[r[0]]),b=pt(ap[r[1]]),mx=(a[0]+b[0])/2,my=Math.min(a[1],b[1])-Math.abs(a[0]-b[0])*.22;
+x.strokeStyle='rgba(156,194,255,.28)';x.lineWidth=1;x.beginPath();x.moveTo(a[0],a[1]);x.quadraticCurveTo(mx,my,b[0],b[1]);x.stroke();
+var u=reduce?.5:((t/240+i*.17)%1),px=(1-u)*(1-u)*a[0]+2*(1-u)*u*mx+u*u*b[0],py=(1-u)*(1-u)*a[1]+2*(1-u)*u*my+u*u*b[1];
+x.fillStyle='#9cc2ff';x.beginPath();x.arc(px,py,2.6,0,7);x.fill()});
+ap.forEach(function(p){var q=pt(p);x.fillStyle='#fff';x.beginPath();x.arc(q[0],q[1],3,0,7);x.fill()});
+t++;if(!reduce)requestAnimationFrame(draw)}
+size();draw();addEventListener('resize',function(){size();if(reduce)draw()});
+})();
+</script>
+</body>
+</html>
