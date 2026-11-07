@@ -4,388 +4,247 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Aikya Sira Kumar | Data Scientist, Aviation &amp; Life Sciences</title>
-<meta name="description" content="Data Scientist building ML, GenAI and graph-learning systems for aviation and life sciences. Open to full-time roles in Mannheim.">
+<meta name="description" content="Data Scientist & ML Engineer building graph learning, GenAI and production MLOps for aviation and life sciences. Open to full-time roles.">
 <meta property="og:title" content="Aikya Sira Kumar | Data Scientist">
-<meta property="og:description" content="ML, GenAI and graph learning for aviation and life sciences.">
+<meta property="og:description" content="Graph learning, GenAI and production MLOps for aviation and life sciences.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#14213d;--muted:#55607a;--bg:#f3f5f9;--card:#fff;--line:#d9dfeb;--sky:#2f6fed;--space:#070b1a;--glow:#9cc2ff;--r:14px;--r-lg:22px}
+:root{--ink:#14213d;--muted:#55607a;--bg:#f3f5f9;--card:#fff;--line:#d9dfeb;--sky:#2f6fed;--space:#070b1a;--glow:#9cc2ff;--r:14px}
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth}
+html{scroll-behavior:smooth;scroll-padding-top:110px}
 body{font:17px/1.65 "IBM Plex Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg)}
-h1,h2,h3{font-family:"Space Grotesk",system-ui,sans-serif;line-height:1.15}
+h1,h2,h3,h4{font-family:"Space Grotesk",system-ui,sans-serif;line-height:1.15}
 a{color:var(--sky)}
 :focus-visible{outline:3px solid var(--sky);outline-offset:3px}
-.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
-nav{position:fixed;inset:0 0 auto;z-index:5;display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:rgba(7,11,26,.72);backdrop-filter:blur(8px);color:#fff}
+.wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+nav{position:fixed;inset:0 0 auto;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:rgba(7,11,26,.82);backdrop-filter:blur(10px);color:#fff}
 nav b{font-family:"Space Grotesk";font-size:18px}
 nav div a{color:#cfd9f5;text-decoration:none;margin-left:20px;font-size:15px}
 nav div a:hover{color:#fff}
 .hero{position:relative;min-height:100svh;background:var(--space);color:#fff;display:flex;align-items:center;overflow:hidden}
 #sky{position:absolute;inset:0;width:100%;height:100%}
-.hero .wrap{position:relative;padding-top:80px;padding-bottom:60px}
-.hero p.hi{color:var(--glow);margin-bottom:14px}
-.hero h1{font-size:clamp(38px,7vw,76px);max-width:15ch;letter-spacing:-.02em}
-.hero p.sub{max-width:56ch;margin:22px 0 30px;color:#cfd9f5;font-size:19px}
-.btn{display:inline-block;padding:12px 22px;border-radius:999px;text-decoration:none;font-weight:500;margin:0 10px 10px 0;border:1.5px solid #fff;color:#fff}
+.hero .wrap{position:relative;padding-top:90px;padding-bottom:70px}
+.hero p.hi{color:var(--glow);margin-bottom:14px;font-weight:500}
+.hero h1{font-size:clamp(36px,6.5vw,72px);max-width:17ch;letter-spacing:-.02em}
+.hero p.sub{max-width:58ch;margin:22px 0 32px;color:#cfd9f5;font-size:19px}
+.btn{display:inline-block;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:600;margin:0 10px 10px 0;border:1.5px solid #fff;color:#fff;transition:transform .2s}
 .btn.main{background:#fff;color:var(--space)}
 .btn:hover{transform:translateY(-2px)}
-.tag{display:inline-block;margin-top:26px;padding:6px 14px;border:1px solid #3b4a7a;border-radius:999px;color:#cfd9f5;font-size:14px}
+.tag{display:inline-block;margin-top:24px;padding:6px 16px;border:1px solid #3b4a7a;border-radius:999px;color:#cfd9f5;font-size:14px}
 .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#4ade80;margin-right:8px}
-section{padding:92px 0}
-section h2{font-size:clamp(28px,4vw,42px);margin-bottom:12px}
-.lead{color:var(--muted);max-width:60ch;margin-bottom:36px}
-.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
-.card h3{font-size:21px;margin-bottom:8px}
-.card p{color:var(--muted);font-size:16px}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.chips span{font-size:13px;padding:3px 11px;border-radius:999px;background:#e8eefc;color:#26407f}
-.proof{font-weight:500;color:var(--ink)!important;margin-top:12px}
-.about{display:grid;gap:40px;grid-template-columns:1.4fr 1fr;align-items:start}
+section{padding:88px 0}
+section>.wrap>h2{font-size:clamp(28px,4vw,44px);margin-bottom:12px}
+.lead{color:var(--muted);max-width:62ch;margin-bottom:34px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chips span{font-size:12px;padding:3px 11px;border-radius:999px;background:#e8eefc;color:#26407f;font-weight:500}
+/* about */
+.about{display:grid;gap:40px;grid-template-columns:1.3fr 1fr;align-items:start}
 .about aside{background:var(--space);color:#cfd9f5;border-radius:var(--r);padding:26px}
 .about aside h3{color:#fff;margin-bottom:10px}
 .about aside li{margin:8px 0 8px 18px}
-
-/* --- Split Project Card Styles --- */
-.project-list{display:flex;flex-direction:column;gap:36px}
-.project-card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:var(--r-lg);
-  padding:24px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:32px;
-  align-items:center;
-  box-shadow:0 8px 30px rgba(0,0,0,0.03);
-}
-.project-card.reversed{
-  grid-template-columns:1fr 1fr;
-}
-.project-card.reversed .project-visual{
-  order:2;
-}
-.project-card.reversed .project-body{
-  order:1;
-}
-.project-visual{
-  position:relative;
-  background:#f8faff;
-  border:1px solid #e1e7f5;
-  border-radius:var(--r);
-  min-height:320px;
-  overflow:hidden;
-}
-.project-visual img{
-  position:absolute;
-  inset:12px;
-  width:calc(100% - 24px);
-  height:calc(100% - 24px);
-  object-fit:contain;
-  display:block;
-}
-.project-visual .placeholder-box{
-  text-align:center;
-  color:var(--muted);
-  font-size:14px;
-}
-.project-visual .placeholder-box svg{
-  display:block;
-  margin:0 auto 10px;
-  stroke:var(--sky);
-}
-.project-body{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  padding:8px 4px;
-}
-.project-meta{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  font-size:13px;
-  font-weight:700;
-  color:var(--muted);
-  text-transform:uppercase;
-  letter-spacing:0.06em;
-  margin-bottom:12px;
-}
-.project-body h3{
-  font-size:clamp(22px,2.2vw,28px);
-  margin-bottom:12px;
-  color:var(--ink);
-}
-.project-desc{
-  color:var(--muted);
-  font-size:16px;
-  margin-bottom:16px;
-}
-.project-features-title{
-  font-size:12px;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:0.06em;
-  color:var(--ink);
-  margin-bottom:8px;
-}
-.project-features{
-  margin:0 0 20px 20px;
-  color:var(--muted);
-  font-size:15px;
-}
-.project-features li{
-  margin-bottom:6px;
-}
-.project-footer{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-top:16px;
-  padding-top:16px;
-  border-top:1px solid #eef2fa;
-}
-.project-links a{
-  font-size:14px;
-  font-weight:500;
-  text-decoration:none;
-  margin-left:14px;
-  color:var(--sky);
-}
-.project-links a:hover{
-  text-decoration:underline;
-}
-
-@media(max-width:860px){
-  .project-card, .project-card.reversed{
-    grid-template-columns:1fr;
-  }
-  .project-card.reversed .project-visual{
-    order:0;
-  }
-  .project-card.reversed .project-body{
-    order:1;
-  }
-  .project-visual{
-    min-height:240px;
-  }
-}
-/* ---------------------------------- */
-
-.tl{border-left:2px solid var(--line);margin-left:6px}
-.job{position:relative;padding:0 0 38px 28px}
-.job::before{content:"";position:absolute;left:-7px;top:8px;width:12px;height:12px;border-radius:50%;background:var(--sky)}
-.job time{color:var(--muted);font-size:14px}
-.job h3{font-size:20px;margin:2px 0}
-.job ul{margin:10px 0 0 18px;color:var(--muted);font-size:16px}
-.cta{background:var(--space);color:#fff;text-align:center}
-.cta h2{margin-bottom:14px}.cta p{color:#cfd9f5;max-width:50ch;margin:0 auto 28px}
-footer{background:var(--space);color:#8d9bc4;text-align:center;padding:0 0 36px;font-size:14px}
 .ph{overflow:hidden;border-radius:var(--r);background:#dfe6f5;margin-bottom:22px}
 .ph img{width:100%;height:auto;display:block}
-.ph.contact{width:150px;aspect-ratio:1;border-radius:50%;margin:0 auto 24px;border:3px solid #3b4a7a}
+.ph.contact{width:140px;aspect-ratio:1;border-radius:50%;margin:0 auto 24px;border:3px solid #3b4a7a}
 .ph.contact img{height:100%;object-fit:cover}
-.ph.autumn{margin:0}
+/* experience + education */
+.cards{display:flex;flex-direction:column;gap:20px}
+.job{display:grid;grid-template-columns:64px 1fr;gap:20px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
+.logo{width:64px;height:64px;border:1px solid var(--line);border-radius:12px;background:#f8faff;display:grid;place-items:center;font-size:26px;overflow:hidden}
+.logo img{width:100%;height:100%;object-fit:contain;padding:6px}
+.job h3{font-size:21px}
+.sub2{color:var(--muted);font-size:14px;margin:2px 0 10px}
+.badge{display:inline-block;margin-left:8px;font:600 11px "IBM Plex Sans";padding:2px 10px;border-radius:999px;background:#e6f7ee;color:#157347;vertical-align:middle}
+.stats{display:flex;flex-wrap:wrap;gap:28px;margin:12px 0}
+.stats b{display:block;font:700 30px "Space Grotesk";color:var(--sky);line-height:1}
+.stats span{font-size:13px;color:var(--muted)}
+.job ul{margin:8px 0 0 18px;color:var(--muted);font-size:15px}.job li{margin:4px 0}
+.edu{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.edu .job{grid-template-columns:1fr}.edu .top{display:flex;gap:16px;align-items:center}
+/* projects by domain */
+[hidden]{display:none!important}
+.filters{margin-bottom:6px}.frow{display:flex;gap:12px;align-items:flex-start;margin:10px 0}
+.frow>b{min-width:64px;padding-top:7px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.frow>div{display:flex;flex-wrap:wrap;gap:8px}
+.pill{font:600 14px "IBM Plex Sans",sans-serif;padding:6px 14px;border-radius:999px;border:1.5px solid var(--a);color:var(--a);background:#fff;cursor:pointer}
+.pill:hover:not(:disabled){background:color-mix(in srgb,var(--a) 12%,#fff)}.pill.on{background:var(--a);color:#fff}
+.pill:disabled{opacity:.35;cursor:not-allowed}#fcount{font-size:14px;color:var(--muted)}.sk{font-weight:600}
+.dom{--a:#2f6fed;margin-top:46px}
+.dh{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:var(--r);background:color-mix(in srgb,var(--a) 12%,#fff);border-left:6px solid var(--a);margin-bottom:20px}
+.dh .ic{font-size:30px}.dh h3{font-size:24px;color:var(--a);filter:brightness(.8)}.dh p{font-size:14px;color:var(--muted)}
+.vis{position:relative;min-height:300px;border-radius:var(--r);overflow:hidden;background:radial-gradient(color-mix(in srgb,var(--a) 28%,transparent) 1.3px,transparent 1.6px) 0 0/18px 18px,linear-gradient(135deg,color-mix(in srgb,var(--a) 16%,#fff),#fff 80%);border:1px solid color-mix(in srgb,var(--a) 30%,#fff)}
+.vis .em{position:absolute;inset:0;display:grid;place-items:center;font-size:72px;opacity:.35}
+.vis img{position:absolute;inset:14px;width:calc(100% - 28px);height:calc(100% - 28px);object-fit:contain;border-radius:8px}
+.vis.ok .em{display:none}
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch;background:var(--card);border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:22px;box-shadow:0 8px 30px rgba(0,0,0,.03)}
+.pc.rev .vis{order:2}
+.bd{display:flex;flex-direction:column;justify-content:center}
+.meta{font-size:12px;font-weight:700;color:var(--a);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px;filter:brightness(.85)}
+.bd h4{font-size:clamp(21px,2vw,27px);margin-bottom:10px}
+.d{color:var(--muted);font-size:16px;margin-bottom:12px}
+.bd ul{margin:0 0 4px 20px;color:var(--muted);font-size:15px}.bd li{margin:5px 0}
+.lk{font-weight:600;font-size:14px;text-decoration:none;margin-top:14px}
+.chips span.x{background:color-mix(in srgb,var(--a) 14%,#fff);color:inherit}
+.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.cc{display:flex;flex-direction:column;background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden}
+.cc .vis{min-height:170px;border-radius:0;border:0;border-bottom:1px solid var(--line)}
+.cc .bd{padding:20px;justify-content:flex-start;flex:1}
+.cc h4{font-size:19px}.cc .d{font-size:15px}
+.cta{background:var(--space);color:#fff;text-align:center}
+.cta h2{margin-bottom:14px}.cta p{color:#cfd9f5;max-width:52ch;margin:0 auto 28px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.card h3{font-size:20px;margin-bottom:6px}.card p{color:var(--muted);font-size:15px}
+.grid3{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+footer{background:var(--space);color:#8d9bc4;text-align:center;padding:0 0 36px;font-size:14px}
+@media(max-width:880px){.about,.pc,.edu{grid-template-columns:1fr}.pc.rev .vis{order:0}.job{grid-template-columns:1fr}nav div a:not(:last-child){display:none}section{padding:64px 0}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
 </style>
 </head>
 <body>
-<nav aria-label="Main"><b>Aikya</b><div><a href="#about">About</a><a href="#work">Work</a><a href="#experience">Experience</a><a href="#contact">Contact</a></div></nav>
+<nav aria-label="Main"><b>Aikya Sira Kumar</b><div><a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#work">Projects</a><a href="#contact">Contact</a></div></nav>
 
 <header class="hero" id="top">
 <canvas id="sky" aria-hidden="true"></canvas>
 <div class="wrap">
 <p class="hi">Hi, I’m Aikya Sira Kumar.</p>
-<h1>I turn airline and health data into decisions.</h1>
-<p class="sub">Data scientist working on ML, GenAI and graph learning. My master’s thesis with Lufthansa Group modelled airline networks with graph neural networks, and I build data pipelines that run in production.</p>
-<a class="btn main" href="#work">See my work</a><a class="btn" href="assets/resume.pdf">Download resume</a><a class="btn" href="#contact">Hire me</a>
-<br><span class="tag"><span class="dot"></span>Open to full-time roles · Mannheim · available now</span>
+<h1>I turn complex flight, graph &amp; healthcare data into production AI.</h1>
+<p class="sub">Data Scientist &amp; ML Engineer specialising in graph neural networks, scalable MLOps and responsible AI. I built production frameworks at Lufthansa Group and I’m ready for high-impact roles.</p>
+<a class="btn main" href="#work">View projects</a><a class="btn" href="assets/resume.pdf">Download resume</a><a class="btn" href="#contact">Contact me</a>
+<br><span class="tag"><span class="dot"></span>Open to full-time roles · Available immediately</span>
 </div>
 </header>
 
 <main>
-<section id="about"><div class="wrap about">
-<div>
+<section id="about"><div class="wrap">
 <h2>Three things you should know about me</h2>
-<p class="lead">I like problems where data has a shape: flight networks, orbits, molecules. Here is what that looks like in practice.</p>
-<p><strong>I work on real airline data at scale.</strong> At Lufthansa Group I worked with about 300 million booking records and a quarterly pipeline that cut its runtime by about 30% after I rebuilt it on Azure ML.</p><br>
-<p><strong>I can explain models to non-technical teams.</strong> I presented my thesis results to Lufthansa’s network planning team and worked daily with commercial colleagues.</p><br>
-<p><strong>I’m drawn to life sciences.</strong> I contributed to an open-source pharma AI agent project, and I attend bioinformatics and cancer research talks at DKFZ in my spare time.</p>
+<div class="about">
+<div>
+<p class="lead">I like problems where data has a shape: flight networks, orbits, molecules.</p>
+<p><strong>I scale production ML.</strong> At Lufthansa Group I re-engineered pipelines across ~300M booking records, cutting runtime by ~30% and compute cost by up to 60% on Azure ML and Databricks.</p><br>
+<p><strong>I build honest, leakage-free AI.</strong> I run feature ablations, red-teaming and EU AI Act checks so models hold up in the real world.</p><br>
+<p><strong>I connect maths to decisions.</strong> I defended a GraphSAGE demand model to Lufthansa’s network planning team and I explain results to non-technical colleagues.</p>
 </div>
 <aside><div class="ph"><img src="assets/about.jpeg" alt="Aikya Sira Kumar" onerror="this.parentNode.remove()"></div><h3>Quick facts</h3><ul>
 <li>M.Sc. Applied Data Science and Analytics, SRH University Heidelberg (2026)</li>
-<li>Data Science Intern, Lufthansa Group (2026)</li>
+<li>Thesis and internship, Lufthansa Group (2026)</li>
 <li>2 years as Data Analyst, Capgemini</li>
 <li>English C1, German B1</li>
-<li>Python, SQL, Databricks, PyTorch, Spark, Azure ML, dbt, Tableau</li></ul></aside>
-</div></section>
-
-<section id="work" style="padding-top:0"><div class="wrap">
-<h2>Proof, not promises</h2>
-<p class="lead">Measured results from airline and life-sciences projects.</p>
-
-<div class="project-list">
-
-  <!-- Project 01 -->
-  <article class="project-card">
-    <div class="project-visual">
-      <img src="assets/thesis.png" alt="Architecture Flowchart">
-      <div class="placeholder-box">
-        <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-        <span>Add Flowchart / Architecture Image</span>
-      </div>
-    </div>
-    <div class="project-body">
-      <div class="project-meta">
-        <span>01</span>
-        <span>Graph Learning · Aviation</span>
-      </div>
-      <h3>Graph Neural Networks for Airline Networks</h3>
-      <p class="project-desc">Master thesis with Lufthansa Group. Joined airline schedules with ticketing records into a unified heterogeneous graph and trained an inductive GraphSAGE architecture to forecast passenger demand.</p>
-      
-      <p class="project-features-title">Key Highlights:</p>
-      <ul class="project-features">
-        <li>Achieved <strong>0.846 R²</strong> on unseen validation seasons</li>
-        <li>Inductive learning generalises to completely new airport nodes</li>
-        <li>Network vulnerability analysis highlights critical disruption points with alternative route rerouting</li>
-        <li>Delivered and defended directly to the Network Planning team</li>
-      </ul>
-
-      <div class="chips">
-        <span>PyTorch Geometric</span><span>PySpark</span><span>Databricks</span><span>GraphSAGE</span>
-      </div>
-      <div class="project-footer">
-        <span style="font-size:13px;color:var(--muted)">Lufthansa Group</span>
-        <div class="project-links">
-          <a href="#contact">Request Thesis</a>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <!-- Project 02 -->
-  <article class="project-card reversed">
-    <div class="project-visual">
-      <img src="assets/acs.drawio.png" alt="Architecture Flowchart">
-      <div class="placeholder-box">
-        <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-        <span>Add Pipeline Architecture / Diagram</span>
-      </div>
-    </div>
-    <div class="project-body">
-      <div class="project-meta">
-        <span>02</span>
-        <span>MLOps · Big Data</span>
-      </div>
-      <h3>Customer Segmentation at 300M Records</h3>
-      <p class="project-desc">Internship project at Lufthansa Group. Classified travellers into corporate versus leisure personas and migrated manual quarterly batch jobs into an automated Azure ML MLOps pipeline.</p>
-      
-      <p class="project-features-title">Key Highlights:</p>
-      <ul class="project-features">
-        <li><strong>30% faster, 60% lower cost:</strong> Migrated legacy ADF jobs to an automated Azure ML pipeline with strict deployment gates.</li>
-        <li><strong>~300M records at scale:</strong> Engineered high-throughput Databricks, Delta Lake, and Unity Catalog pipelines with zero data leaks[cite: 2].</li>
-        <li><strong>40% fewer errors:</strong> Benchmarked XGBoost and AutoML against baselines, cutting misclassification significantly[cite: 2].</li>
-        <li><strong>Production-ready &amp; governed:</strong> Complied with enterprise GDPR and AI policies, handing off full documentation to stakeholders[cite: 2].</li>
-      </ul>
-
-      <div class="chips">
-        <span>XGBoost</span><span>Azure ML</span><span>ADF</span><span>Delta Tables</span>
-      </div>
-      <div class="project-footer">
-        <span style="font-size:13px;color:var(--muted)">Production Workflow</span>
-        <div class="project-links">
-          <a href="#contact">Read Overview</a>
-        </div>
-      </div>
-    </div>
-  </article>
-
-  <!-- Project 03 -->
-  <article class="project-card">
-    <div class="project-visual">
-      <img src="assets/pharma-agent.drawio.png" alt="AI Agent Workflow">
-      <div class="placeholder-box">
-        <svg width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg>
-        <span>Add Agent Flow / Screenshot</span>
-      </div>
-    </div>
-    <div class="project-body">
-      <div class="project-meta">
-        <span>03</span>
-        <span>GenAI · Life Sciences</span>
-      </div>
-      <h3>AI Agents 4 Pharma</h3>
-      <p class="project-desc">Open-source contribution to multi-agent pipelines for biological and chemical literature parsing. Added bioRxiv and medRxiv integration for scientific document indexing.</p>
-      
-      <p class="project-features-title">Key Highlights:</p>
-      <ul class="project-features">
-        <li>Built multimodal indexing using NVIDIA NeMo Retriever and PaddleOCR</li>
-        <li>Empowered researchers to query preprint repositories via autonomous agents</li>
-        <li>Integrated structured output parsing for pharmacological entities</li>
-      </ul>
-
-      <div class="chips">
-        <span>LLM Agents</span><span>PaddleOCR</span><span>NeMo Retriever</span>
-      </div>
-      <div class="project-footer">
-        <span style="font-size:13px;color:var(--muted)">Open Source</span>
-        <div class="project-links">
-          <a href="https://github.com/AikyaKumar" target="_blank" rel="noopener">GitHub Repo ↗</a>
-        </div>
-      </div>
-    </div>
-  </article>
-
+<li>Databricks, PyTorch Geometric, Azure ML, Spark, dbt</li></ul></aside>
 </div>
 </div></section>
 
 <section id="experience" style="background:#fff"><div class="wrap">
-<h2>Experience and education</h2>
-<p class="lead">Most recent first.</p>
-<div class="tl">
-<div class="job"><time>Jan 2026 – Sep 2026 · Frankfurt</time><h3>Data Science Intern, Lufthansa Group</h3><ul><li>Built an Azure ML MLOps framework for a quarterly customer segmentation process, cutting runtime by about 30%</li><li>Classified corporate and leisure travellers on about 300M booking records</li><li>Built Databricks pipelines with Delta Tables, Unity Catalog and Azure Data Factory</li></ul></div>
-<div class="job"><time>Apr 2026 – Sep 2026</time><h3>Master thesis, Lufthansa Group</h3><ul><li>GraphSAGE demand forecasting and network vulnerability analysis (see above)</li></ul></div>
-<div class="job"><time>Sep 2022 – Sep 2024 · Hyderabad</time><h3>Senior Data Analyst, Capgemini</h3><ul><li>Built KPI monitoring and validation workflows that supported 99.9% availability for a restaurant platform</li><li>Python and SQL pipelines across 3,000+ websites</li><li>Promoted to Senior Data Analyst</li></ul></div>
-<div class="job"><time>2024 – 2026 · Heidelberg</time><h3>M.Sc. Applied Data Science and Analytics, SRH University</h3></div>
-<div class="job"><time>2018 – 2022 · Tumkur, India</time><h3>B.E. Telecommunications Engineering, SSIT</h3></div>
-</div></div></section>
+<h2>Three years. One trajectory.</h2>
+<p class="lead">From keeping pipelines at 99.9% availability to shipping governed ML at airline scale.</p>
+<div class="cards" id="exp"></div>
+</div></section>
+
+<section id="education"><div class="wrap">
+<h2>Engineering, then data science.</h2>
+<p class="lead">&nbsp;</p>
+<div class="edu" id="edu"></div>
+</div></section>
+
+<section id="work" style="background:#fff;padding-top:60px"><div class="wrap">
+<h2>Projects</h2>
+<p class="lead">Filter by industry domain, by skill, or both. A project can belong to several skills.</p>
+<div class="filters"><div class="frow"><b>Domain</b><div id="fd"></div></div><div class="frow"><b>Skill</b><div id="fs"></div></div><p id="fcount"></p></div>
+<div id="doms"></div>
+</div></section>
 
 <section id="beyond"><div class="wrap">
 <h2>Beyond the job</h2>
-<p class="lead">Space, flight and health keep showing up in what I do for fun too.</p>
-<div class="grid">
-<div class="ph autumn"><img src="assets/autumn.jpeg" alt="Aikya on a bridge among autumn trees" loading="lazy" onerror="this.parentNode.remove()"></div>
+<p class="lead">Space, healthcare and community.</p>
+<div class="grid3">
+<div class="ph" style="margin:0"><img src="assets/autumn.jpeg" alt="Aikya outdoors" loading="lazy" onerror="this.parentNode.remove()"></div>
 <div class="card"><h3>NASA Space Apps</h3><p>Took part in 2025 and joining again in 2026.</p></div>
-<div class="card"><h3>Healthcare hackathon, Pristina</h3><p>My team built iSpace, a shared 3D space for healthcare and education, together with nurses, doctors and IT specialists.</p></div>
+<div class="card"><h3>Healthcare hackathon, Pristina</h3><p>My team built iSpace, a shared 3D space for healthcare and education, with nurses, doctors and IT specialists.</p></div>
 <div class="card"><h3>Stargazing and painting</h3><p>I chase Saturn and Venus sightings, and paint to switch off.</p></div>
 </div></div></section>
 
 <section class="cta" id="contact"><div class="wrap">
-<div class="ph contact"><img src="assets/contact.jpeg" alt="Aikya smiling" loading="lazy" onerror="this.parentNode.remove()"></div>
-<h2>Looking for a data scientist who ships?</h2>
-<p>I’m available now for full-time roles in aviation, life sciences and applied AI, based in Mannheim.</p>
-<a class="btn main" href="mailto:aikyasirakumar04@gmail.com">Email me</a>
-<a class="btn" href="https://www.linkedin.com/in/aikya-sira-kumar/">LinkedIn</a>
-<a class="btn" href="https://github.com/AikyaKumar">GitHub</a>
+<div class="ph contact"><img src="assets/contact.jpeg" alt="Aikya Sira Kumar" loading="lazy" onerror="this.parentNode.remove()"></div>
+<h2>Ready to build high-performance data systems?</h2>
+<p>I’m interviewing for full-time Data Science, MLOps and AI Engineering roles in Germany and remote.</p>
+<a class="btn main" href="mailto:aikyasirakumar04@gmail.com">Send email</a>
+<a class="btn" href="https://www.linkedin.com/in/aikya-s-k-kumar-69031b1ab/" target="_blank" rel="noopener">LinkedIn</a>
+<a class="btn" href="https://github.com/AikyaKumar" target="_blank" rel="noopener">GitHub</a>
 </div></section>
 </main>
 <footer>© 2026 Aikya Sira Kumar</footer>
 
 <script>
+/* ===== EDIT YOUR CONTENT HERE. Images go in assets/ (img / logo fields). ===== */
+var GH='https://github.com/AikyaKumar';
+var EXP=[
+{logo:'logo-lufthansa.png',e:'✈️',role:'Data Science Intern',org:'Lufthansa Group · Frankfurt',date:'Jan 2026 – Sep 2026',stats:[['~300M','booking records'],['~30%','faster runtime'],['up to 60%','lower compute cost']],hl:['Built Azure ML MLOps pipelines replacing legacy ADF batch workflows','Processed records via Databricks Delta Tables and Unity Catalog without data leakage','Benchmarked XGBoost, FLAML AutoML and Random Forest with automated deployment gates'],ch:['Azure ML','Databricks','XGBoost','Delta Lake','ADF']},
+{logo:'logo-lufthansa.png',e:'✈️',role:'Master Thesis Researcher',org:'Lufthansa Group · Frankfurt &amp; Heidelberg',date:'Apr 2026 – Sep 2026',stats:[['0.846','R² on unseen season']],hl:['Built inductive GraphSAGE models in PyTorch Geometric on IATA DDS ticketing and OAG schedule data','Found structurally critical hub airports with node-removal simulations'],ch:['PyTorch Geometric','PySpark','NetworkX','GraphSAGE']},
+{logo:'logo-capgemini.png',e:'📊',role:'Senior Data Analyst',badge:'Promoted',org:'Capgemini · Hyderabad',date:'Apr 2023 – Sep 2024',stats:[['3,000+','websites monitored'],['99.9%','availability supported']],hl:['Maintained automated KPI monitoring and validation workflows','Built ELT and data validation pipelines in Python and SQL, cutting manual debugging'],ch:['Python','SQL','KPI monitoring','ELT']},
+{logo:'logo-capgemini.png',e:'📊',role:'Data Analyst',org:'Capgemini · Hyderabad',date:'Sep 2022 – Apr 2023',hl:['Started on the same monitoring and data quality team before the promotion'],ch:['Python','SQL']}
+];
+var EDU=[
+{logo:'logo-srh.png',e:'🎓',role:'M.Sc. Applied Data Science and Analytics',org:'SRH University Heidelberg',date:'Oct 2024 – Sep 2026',badge:'Graduated',hl:['Advanced machine learning, graph analytics, distributed systems and cloud infrastructure','Thesis with Lufthansa Group on GNNs for airline networks']},
+{logo:'logo-ssit.png',e:'📡',role:'B.E. Telecommunications Engineering',org:'Sri Siddhartha Institute of Technology, Tumkur',date:'Aug 2018 – Jul 2022',hl:['Top 6 of class, 8.6/10 CGPA','Final-year work on IoT-enabled environmental monitoring']}
+];
+var DOM=[
+{id:'air',n:'Airlines &amp; Aviation',e:'✈️',a:'#2f6fed',t:'Networks, demand and passengers',p:[
+ {big:1,n:'Airline Network &amp; Passenger Demand Analytics',tag:'Master thesis · Lufthansa Group',d:'Joined global flight schedules with ticketing data into one heterogeneous graph and trained an inductive GraphSAGE model to forecast passenger demand.',hl:['R² of 0.846 on a held-out season, generalising to unseen airports','Edge-aware GraphSAGE in PyTorch Geometric','Node-removal simulations expose critical hubs and suggest reroutes','Presented to Lufthansa’s network planning team'],ch:['PyTorch Geometric','PySpark','GraphSAGE','IATA DDS','NetworkX'],sk:['gnn','ml'],img:'portfolio_thesis.png',l:['Request methodology','#contact']},
+ {big:1,n:'Production MLOps &amp; Passenger Segmentation',tag:'Internship · Lufthansa Group',d:'Replaced manual quarterly batch jobs with a governed Azure ML pipeline that classifies corporate vs. leisure travellers across ~300M booking records.',hl:['~30% faster and up to 60% lower compute cost','Databricks, Delta Lake and Unity Catalog at ~300M-record scale','40% relative error reduction vs. baselines','GDPR and AI-policy compliant, handed off with documentation'],ch:['Azure ML','Databricks','XGBoost','FLAML','Unity Catalog'],sk:['mlops','ml'],img:'acs.png',l:['Discuss architecture','#contact']}]},
+{id:'life',n:'Life Sciences &amp; Pharma',e:'🧬',a:'#12a37f',t:'Agents that read scientific literature',p:[
+ {big:1,n:'AI Agents 4 Pharma',tag:'Open source · GenAI',d:'Contributed to a multi-agent framework that reads scientific papers. Added bioRxiv and medRxiv sources and a multimodal pipeline with NVIDIA NeMo Retriever and PaddleOCR.',hl:['Wrote the extraction pipeline from scratch and verified it on 6–8 papers','Text inside tables, charts and infographics extracted and answered via GPT-4o mini','Worked on giving OCR’d numbers the context of what they mean'],ch:['LLM agents','PaddleOCR','NeMo Retriever','GPT-4o mini'],sk:['genai'],img:'pharma_agent.png',l:['GitHub','']}]},
+{id:'fin',n:'Finance &amp; Responsible AI',e:'🏦',a:'#d98b1f',t:'Trustworthy models for regulated domains',p:[
+ {big:1,n:'Responsible AI Credit-Risk Audit',tag:'Independent research · EU AI Act',d:'End-to-end trustworthy-AI audit of a credit-risk model on 10,127 bank customers: leakage diagnosis, fairness, explainability and red-teaming.',hl:['Caught target leakage: 99.2% accuracy fell to a PR-AUC of 0.082 on the leakage-free set (4.6% base rate)','Fairness audit with bootstrap confidence intervals, explained with SHAP and LIME','Red-teamed with feature perturbation and label poisoning, then added a defence','EU AI Act conformity assessment, model card and risk register'],ch:['scikit-learn','SHAP','LIME','Fairness','EU AI Act'],sk:['rai','ml'],img:'responsibleai.png',l:['GitHub repository',GH+'/responsible-ai-credit-risk']}]},
+{id:'space',n:'Space',e:'🪐',a:'#7c5cff',t:'Orbits, telescopes and hackathons',p:[
+ {n:'Exoplanet Classifier',tag:'NASA Space Apps hackathon',d:'Decision-tree and ensemble classifiers on NASA Kepler transit data, with a web tool to retrain interactively.',ch:['Kepler','Streamlit','scikit-learn'],sk:['ml'],img:'exoplanet_clssification.png',l:['View project',GH]}]},
+{id:'city',n:'Cities, Mobility &amp; Events',e:'🏙️',a:'#0e9bb0',t:'Streaming and warehousing urban data',p:[
+ {n:'NYC Taxi Demand &amp; Weather ELT',tag:'Data engineering · GCP',d:'ELT pipeline joining 1M+ taxi trips with weather logs, dbt marts and Tableau dashboards.',ch:['BigQuery','dbt','Tableau'],sk:['de'],img:'nyc-taxi.png',l:['View pipeline',GH]},
+ {n:'EventCast Real-Time Streaming',tag:'Streaming · Distributed systems',d:'Kafka pipeline streaming weather and event data for 300+ German cities into MongoDB, served by a Dockerised Streamlit app.',ch:['Kafka','Docker','MongoDB'],sk:['de'],img:'eventcast.png',l:['View architecture',GH]}]},
+{id:'cloud',n:'Cloud &amp; Security',e:'☁️',a:'#5b6b8c',t:'Finding the unusual in audit logs',p:[
+ {n:'GCP Activity Anomaly Detection',tag:'Cybersecurity · Cloud ML',d:'Analysed 1M+ audit logs on BigQuery and Vertex AI to isolate suspicious installs and unauthorised permissions.',ch:['BigQuery','Vertex AI','Anomaly detection'],sk:['ml','de'],img:'gcp-fraud.png',l:['View case study',GH]}]},
+{id:'sport',n:'Sports &amp; Media',e:'⚽',a:'#e0533d',t:'Language models on match transcripts',p:[
+ {n:'Sports Analytics NLP Simulator',tag:'NLP · Deep learning',d:'Fine-tuned RoBERTa on 5,000+ transcripts despite class imbalance, with t-SNE topic clusters and a GPT-2 Q&amp;A assistant in Streamlit.',ch:['RoBERTa','HuggingFace','PyTorch'],sk:['genai','ml'],img:'sports-nlp.png',l:['Explore repo',GH]}]}
+];
+/* ===== rendering (no need to edit below) ===== */
+var $=function(i){return document.getElementById(i)};
+var chips=function(a,c){return '<div class="chips">'+a.map(function(x){return '<span class="'+(c||'')+'">'+x+'</span>'}).join('')+'</div>'};
+var li=function(a){return a&&a.length?'<ul>'+a.map(function(h){return '<li>'+h+'</li>'}).join('')+'</ul>':''};
+function logo(o){return '<div class="logo"><span>'+o.e+'</span>'+(o.logo?'<img src="assets/'+o.logo+'" alt="" onerror="this.remove()" onload="this.previousElementSibling.remove()">':'')+'</div>'}
+function row(o){var s=o.stats?'<div class="stats">'+o.stats.map(function(x){return '<div><b>'+x[0]+'</b><span>'+x[1]+'</span></div>'}).join('')+'</div>':'';
+return '<article class="job"><div>'+logo(o)+'</div><div><h3>'+o.role+(o.badge?'<span class="badge">'+o.badge+'</span>':'')+'</h3><p class="sub2">'+o.org+' · '+o.date+'</p>'+s+li(o.hl)+(o.ch?chips(o.ch):'')+'</div></article>'}
+$('exp').innerHTML=EXP.map(row).join('');
+$('edu').innerHTML=EDU.map(function(o){return '<article class="job"><div class="top">'+logo(o)+'<div><h3>'+o.role+(o.badge?'<span class="badge">'+o.badge+'</span>':'')+'</h3><p class="sub2" style="margin:0">'+o.org+' · '+o.date+'</p></div></div>'+li(o.hl)+'</article>'}).join('');
+function vis(p,d){return '<div class="vis"><span class="em" aria-hidden="true">'+d.e+'</span><img src="assets/'+p.img+'" alt="'+p.n+' diagram" loading="lazy" onerror="this.remove()" onload="this.parentNode.classList.add(\'ok\')"></div>'}
+function link(l){var u=l[1]||GH,ext=u.charAt(0)!='#';return '<a class="lk" href="'+u+'"'+(ext?' target="_blank" rel="noopener"':'')+' style="color:var(--a)">'+l[0]+' ↗</a>'}
+var SK=[['gnn','Graph ML'],['ml','Machine Learning'],['mlops','MLOps &amp; Cloud'],['genai','GenAI &amp; NLP'],['rai','Responsible AI'],['de','Data Engineering']],SKN={},fd='all',fs='all',ALL=[];
+SK.forEach(function(k){SKN[k[0]]=k[1]});
+function tags(p){return '<div class="chips">'+p.sk.map(function(k){return '<span class="x sk">'+SKN[k]+'</span>'}).join('')+p.ch.map(function(x){return '<span>'+x+'</span>'}).join('')+'</div>'}
+function pill(k,id,l,a){return '<button class="pill" data-k="'+k+'" data-id="'+id+'" style="--a:'+(a||'#2f6fed')+'">'+l+'</button>'}
+$('fd').innerHTML=pill('d','all','All domains','#14213d')+DOM.map(function(d){return pill('d',d.id,d.e+' '+d.n,d.a)}).join('');
+$('fs').innerHTML=pill('s','all','All skills','#14213d')+SK.map(function(k){return pill('s',k[0],k[1])}).join('');
+$('doms').innerHTML=DOM.map(function(d){var big=d.p.filter(function(p){return p.big}),sm=d.p.filter(function(p){return !p.big});
+d.p.forEach(function(p){ALL.push({d:d.id,s:p.sk})});
+return '<div class="dom" id="d-'+d.id+'" style="--a:'+d.a+'"><div class="dh"><span class="ic">'+d.e+'</span><div><h3>'+d.n+'</h3><p>'+d.t+'</p></div></div>'+
+big.map(function(p,i){return '<article class="pc'+(i%2?' rev':'')+'" data-s="'+p.sk.join(' ')+'">'+vis(p,d)+'<div class="bd"><div class="meta">'+p.tag+'</div><h4>'+p.n+'</h4><p class="d">'+p.d+'</p>'+li(p.hl)+tags(p)+link(p.l)+'</div></article>'}).join('')+
+(sm.length?'<div class="grid">'+sm.map(function(p){return '<article class="cc" data-s="'+p.sk.join(' ')+'">'+vis(p,d)+'<div class="bd"><div class="meta">'+p.tag+'</div><h4>'+p.n+'</h4><p class="d">'+p.d+'</p>'+tags(p)+link(p.l)+'</div></article>'}).join('')+'</div>':'')+'</div>'}).join('');
+function has(d,k){return ALL.some(function(p){return (d=='all'||p.d==d)&&(k=='all'||p.s.indexOf(k)>-1)})}
+function apply(){var n=0;
+document.querySelectorAll('.dom').forEach(function(sec){var d=sec.id.slice(2),v=0;
+sec.querySelectorAll('[data-s]').forEach(function(c){var ok=(fd=='all'||fd==d)&&(fs=='all'||c.dataset.s.split(' ').indexOf(fs)>-1);c.hidden=!ok;if(ok)v++});sec.hidden=!v;n+=v});
+document.querySelectorAll('.pill').forEach(function(b){var d=b.dataset.k=='d',id=b.dataset.id;b.classList.toggle('on',(d?fd:fs)==id);b.disabled=(d?fd:fs)!=id&&!(d?has(id,fs):has(fd,id))});
+$('fcount').textContent=n+(n==1?' project':' projects')+(fd!='all'||fs!='all'?' match your filters':'')}
+document.querySelector('.filters').addEventListener('click',function(e){var b=e.target.closest('.pill');if(!b||b.disabled)return;var id=b.dataset.id,d=b.dataset.k=='d';
+if(d)fd=(fd==id?'all':id);else fs=(fs==id?'all':id);apply()});
+apply();
+
 (function(){
-var c=document.getElementById('sky'),x=c.getContext('2d'),W,H,stars=[],t=0;
-var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-var ap=[[8.6,50],[78.4,17.2],[104,1.4],[-73.8,40.6],[-46.5,-23.4],[55.4,25.2]];
-var routes=[[0,1],[0,3],[0,5],[5,2],[0,4],[1,2]];
-function size(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;
-stars=[];for(var i=0;i<Math.round(W*H/5000);i++)stars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.3+.2,p:Math.random()*6});}
+var c=$('sky'),x=c.getContext('2d'),W,H,stars=[],t=0,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+var ap=[[8.6,50],[78.4,17.2],[104,1.4],[-73.8,40.6],[-46.5,-23.4],[55.4,25.2]],routes=[[0,1],[0,3],[0,5],[5,2],[0,4],[1,2]];
+function size(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;stars=[];for(var i=0;i<Math.round(W*H/5000);i++)stars.push({x:Math.random()*W,y:Math.random()*H,r:Math.random()*1.3+.2,p:Math.random()*6})}
 function pt(a){return[(a[0]+180)/360*W,(90-a[1])/180*H*.9+H*.05]}
 function draw(){x.clearRect(0,0,W,H);
-stars.forEach(function(s){x.globalAlpha=reduce?.7:.35+.65*Math.abs(Math.sin(t/60+s.p));x.fillStyle='#fff';x.beginPath();x.arc(s.x,s.y,s.r,0,7);x.fill()});
-x.globalAlpha=1;
+stars.forEach(function(s){x.globalAlpha=reduce?.7:.35+.65*Math.abs(Math.sin(t/60+s.p));x.fillStyle='#fff';x.beginPath();x.arc(s.x,s.y,s.r,0,7);x.fill()});x.globalAlpha=1;
 routes.forEach(function(r,i){var a=pt(ap[r[0]]),b=pt(ap[r[1]]),mx=(a[0]+b[0])/2,my=Math.min(a[1],b[1])-Math.abs(a[0]-b[0])*.22;
 x.strokeStyle='rgba(156,194,255,.28)';x.lineWidth=1;x.beginPath();x.moveTo(a[0],a[1]);x.quadraticCurveTo(mx,my,b[0],b[1]);x.stroke();
 var u=reduce?.5:((t/240+i*.17)%1),px=(1-u)*(1-u)*a[0]+2*(1-u)*u*mx+u*u*b[0],py=(1-u)*(1-u)*a[1]+2*(1-u)*u*my+u*u*b[1];
