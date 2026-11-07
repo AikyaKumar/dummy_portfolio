@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 827" width="1000" height="827" role="img" aria-label="Architecture: raw data ingestion, heterogeneous graph modelling, GraphSAGE learning, and evaluation with R-squared 0.846 on a held-out season">
+<rect width="1000" height="827" fill="#eaf1fd"/>
+<rect x="20" y="24" width="960" height="170" rx="18" fill="#fff" stroke="#c9d8f5" stroke-width="1.5"/>
+<circle cx="62" cy="109.0" r="22" fill="#2f6fed"/>
+<text x="62" y="117.0" text-anchor="middle" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="22" fill="#fff">1</text>
+<text x="98" y="107.0" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="24" fill="#14213d">Data</text>
+<text x="98" y="135.0" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="24" fill="#14213d">ingestion</text>
+<path d="M500 197 v11" stroke="#2f6fed" stroke-width="2.5" stroke-linecap="round"/>
+<polygon points="491,207 509,207 500,218" fill="#2f6fed"/>
+<rect x="250" y="46" width="222" height="126" rx="12" fill="#f3f7ff" stroke="#c9d8f5" stroke-width="1.5"/>
+<text x="268" y="82" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="21" fill="#14213d">OAG schedules</text>
+<text x="268" y="109" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">Flight legs,</text>
+<text x="268" y="131" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">frequencies, seats</text>
+<rect x="488" y="46" width="222" height="126" rx="12" fill="#f3f7ff" stroke="#c9d8f5" stroke-width="1.5"/>
+<text x="506" y="82" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="21" fill="#14213d">IATA DDS tickets</text>
+<text x="506" y="109" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">True passenger</text>
+<text x="506" y="131" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">demand per O&amp;D pair</text>
+<rect x="726" y="46" width="222" height="126" rx="12" fill="#f3f7ff" stroke="#c9d8f5" stroke-width="1.5"/>
+<text x="744" y="82" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="21" fill="#14213d">PySpark ETL</text>
+<text x="744" y="109" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">Data alignment,</text>
+<text x="744" y="131" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">temporal normalisation</text>
+<rect x="20" y="220" width="960" height="177" rx="18" fill="#fff" stroke="#c9d8f5" stroke-width="1.5"/>
+<circle cx="62" cy="308.5" r="22" fill="#2f6fed"/>
+<text x="62" y="316.5" text-anchor="middle" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="22" fill="#fff">2</text>
+<text x="98" y="306.5" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="24" fill="#14213d">Graph</text>
+<text x="98" y="334.5" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="24" fill="#14213d">modelling</text>
+<path d="M500 400 v11" stroke="#2f6fed" stroke-width="2.5" stroke-linecap="round"/>
+<polygon points="491,410 509,410 500,421" fill="#2f6fed"/>
+<rect x="250" y="242" width="342" height="133" rx="12" fill="#f3f7ff" stroke="#c9d8f5" stroke-width="1.5"/>
+<text x="268" y="278" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="21" fill="#14213d">Heterogeneous graph (PyG)</text>
+<text x="268" y="305" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">Nodes: flights, airports, airlines,</text>
+<text x="268" y="327" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">itineraries</text>
+<text x="268" y="349" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">Edges: connects, marketed by, serves</text>
+<rect x="608" y="242" width="342" height="133" rx="12" fill="#f3f7ff" stroke="#c9d8f5" stroke-width="1.5"/>
+<text x="626" y="278" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="21" fill="#14213d">Airport projection</text>
+<text x="626" y="305" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">Articulation points</text>
+<text x="626" y="327" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">Airport removal simulation</text>
+<text x="626" y="349" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">Shortest path (ASPL)</text>
+<rect x="20" y="423" width="960" height="177" rx="18" fill="#fff" stroke="#c9d8f5" stroke-width="1.5"/>
+<circle cx="62" cy="511.5" r="22" fill="#2f6fed"/>
+<text x="62" y="519.5" text-anchor="middle" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="22" fill="#fff">3</text>
+<text x="98" y="509.5" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="24" fill="#14213d">Model</text>
+<text x="98" y="537.5" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="24" fill="#14213d">learning</text>
+<path d="M500 603 v11" stroke="#2f6fed" stroke-width="2.5" stroke-linecap="round"/>
+<polygon points="491,613 509,613 500,624" fill="#2f6fed"/>
+<rect x="250" y="445" width="342" height="133" rx="12" fill="#f3f7ff" stroke="#c9d8f5" stroke-width="1.5"/>
+<text x="268" y="481" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="21" fill="#14213d">GraphSAGE layer</text>
+<text x="268" y="508" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">Inductive, edge-aware convolution</text>
+<text x="268" y="530" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">Custom neighbourhood sampling</text>
+<text x="268" y="552" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">Calendar-based temporal assessment</text>
+<rect x="608" y="445" width="342" height="133" rx="12" fill="#f3f7ff" stroke="#c9d8f5" stroke-width="1.5"/>
+<text x="626" y="481" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="21" fill="#14213d">Vulnerability analysis</text>
+<text x="626" y="508" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">Hub failure tolerance</text>
+<text x="626" y="530" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">Alternative route scoring</text>
+<rect x="20" y="626" width="960" height="177" rx="18" fill="#fff" stroke="#c9d8f5" stroke-width="1.5"/>
+<circle cx="62" cy="714.5" r="22" fill="#2f6fed"/>
+<text x="62" y="722.5" text-anchor="middle" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="22" fill="#fff">4</text>
+<text x="98" y="712.5" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="24" fill="#14213d">Evaluation</text>
+<text x="98" y="740.5" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="24" fill="#14213d">&amp; delivery</text>
+<rect x="250" y="648" width="222" height="133" rx="12" fill="#2f6fed"/>
+<text x="268" y="678" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="600" font-size="15" letter-spacing="1" fill="#cfe0ff">R² SCORE</text>
+<text x="268" y="736" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="60" fill="#fff">0.846</text>
+<text x="268" y="762" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#e6efff">held-out season</text>
+<rect x="488" y="648" width="222" height="133" rx="12" fill="#f3f7ff" stroke="#c9d8f5" stroke-width="1.5"/>
+<text x="506" y="684" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="21" fill="#14213d">Generalises to</text>
+<text x="506" y="711" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">unseen nodes</text>
+<text x="506" y="733" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">(inductive property)</text>
+<rect x="726" y="648" width="222" height="133" rx="12" fill="#f3f7ff" stroke="#c9d8f5" stroke-width="1.5"/>
+<text x="744" y="684" font-family="'Space Grotesk','IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="21" fill="#14213d">Delivered to</text>
+<text x="744" y="711" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">Network planning team</text>
+<text x="744" y="733" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">for route and</text>
+<text x="744" y="755" font-family="'IBM Plex Sans','Helvetica Neue',Arial,sans-serif" font-size="16.5" fill="#55607a">capacity planning</text>
+</svg>
