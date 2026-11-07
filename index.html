@@ -4,9 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Aikya Sira Kumar | Data Scientist, Aviation &amp; Life Sciences</title>
-<meta name="description" content="Data Scientist & AI Engineer building ML, GenAI, and graph-learning systems for aviation and life sciences. Open to full-time roles in Mannheim & remote.">
+<meta name="description" content="Data Scientist & ML Engineer building graph learning, GenAI and production MLOps for aviation and life sciences. Open to full-time roles.">
 <meta property="og:title" content="Aikya Sira Kumar | Data Scientist">
-<meta property="og:description" content="ML, GenAI, graph learning, and production MLOps for aviation and regulated domains.">
+<meta property="og:description" content="Graph learning, GenAI and production MLOps for aviation and life sciences.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,157 +20,27 @@ h1,h2,h3,h4{font-family:"Space Grotesk",system-ui,sans-serif;line-height:1.15}
 a{color:var(--sky)}
 :focus-visible{outline:3px solid var(--sky);outline-offset:3px}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-nav{position:fixed;inset:0 0 auto;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:rgba(7,11,26,.8);backdrop-filter:blur(10px);color:#fff}
+nav{position:fixed;inset:0 0 auto;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:rgba(7,11,26,.82);backdrop-filter:blur(10px);color:#fff}
 nav b{font-family:"Space Grotesk";font-size:18px}
-nav div a{color:#cfd9f5;text-decoration:none;margin-left:20px;font-size:15px;transition:color .2s}
+nav div a{color:#cfd9f5;text-decoration:none;margin-left:20px;font-size:15px}
 nav div a:hover{color:#fff}
 .hero{position:relative;min-height:100svh;background:var(--space);color:#fff;display:flex;align-items:center;overflow:hidden}
 #sky{position:absolute;inset:0;width:100%;height:100%}
 .hero .wrap{position:relative;padding-top:90px;padding-bottom:70px}
 .hero p.hi{color:var(--glow);margin-bottom:14px;font-weight:500}
-.hero h1{font-size:clamp(36px,6.5vw,74px);max-width:16ch;letter-spacing:-.02em}
+.hero h1{font-size:clamp(36px,6.5vw,72px);max-width:17ch;letter-spacing:-.02em}
 .hero p.sub{max-width:58ch;margin:22px 0 32px;color:#cfd9f5;font-size:19px}
-.btn{display:inline-block;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:600;margin:0 10px 10px 0;border:1.5px solid #fff;color:#fff;transition:transform .2s,background .2s}
+.btn{display:inline-block;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:600;margin:0 10px 10px 0;border:1.5px solid #fff;color:#fff;transition:transform .2s}
 .btn.main{background:#fff;color:var(--space)}
 .btn:hover{transform:translateY(-2px)}
 .tag{display:inline-block;margin-top:24px;padding:6px 16px;border:1px solid #3b4a7a;border-radius:999px;color:#cfd9f5;font-size:14px}
 .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#4ade80;margin-right:8px}
-
-section{padding:90px 0}
-section h2{font-size:clamp(28px,4vw,44px);margin-bottom:12px}
-.lead{color:var(--muted);max-width:62ch;margin-bottom:32px}
-
-/* --- Interactive Skill Tabs --- */
-.filter-bar{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:36px}
-.filter-btn{padding:8px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--muted);font-weight:500;font-size:14px;cursor:pointer;transition:all .2s;font-family:inherit}
-.filter-btn:hover{border-color:var(--sky);color:var(--sky)}
-.filter-btn.active{background:var(--space);color:#fff;border-color:var(--space)}
-
-/* --- Split Project Card Styles --- */
-.project-list{display:flex;flex-direction:column;gap:36px}
-.project-card{
-  background:var(--card);
-  border:1px solid var(--line);
-  border-radius:var(--r-lg);
-  padding:28px;
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:32px;
-  align-items:center;
-  box-shadow:0 8px 30px rgba(0,0,0,0.03);
-  transition:transform .25s ease, box-shadow .25s ease;
-}
-.project-card:hover{
-  box-shadow:0 14px 40px rgba(7,11,26,0.07);
-}
-.project-card.reversed{
-  grid-template-columns:1fr 1fr;
-}
-.project-card.reversed .project-visual{
-  order:2;
-}
-.project-card.reversed .project-body{
-  order:1;
-}
-.project-visual{
-  background:#f8faff;
-  border:1px solid #e1e7f5;
-  border-radius:var(--r);
-  min-height:360px;
-  height:100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  padding:16px;
-  overflow:hidden;
-}
-.project-visual img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  border-radius:calc(var(--r) - 4px);
-  display:block;
-}
-.project-visual .placeholder-box{
-  text-align:center;
-  color:var(--muted);
-  font-size:14px;
-}
-.project-visual .placeholder-box svg{
-  display:block;
-  margin:0 auto 10px;
-  stroke:var(--sky);
-}
-.project-body{
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-}
-.project-meta{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  font-size:12px;
-  font-weight:700;
-  color:var(--muted);
-  text-transform:uppercase;
-  letter-spacing:0.07em;
-  margin-bottom:12px;
-}
-.project-body h3{
-  font-size:clamp(22px,2vw,28px);
-  margin-bottom:12px;
-  color:var(--ink);
-}
-.project-desc{
-  color:var(--muted);
-  font-size:16px;
-  margin-bottom:16px;
-}
-.project-features-title{
-  font-size:12px;
-  font-weight:700;
-  text-transform:uppercase;
-  letter-spacing:0.06em;
-  color:var(--ink);
-  margin-bottom:8px;
-}
-.project-features{
-  margin:0 0 18px 20px;
-  color:var(--muted);
-  font-size:15px;
-}
-.project-features li{
-  margin-bottom:6px;
-}
-.project-footer{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  margin-top:16px;
-  padding-top:16px;
-  border-top:1px solid #eef2fa;
-}
-.project-links a{
-  font-size:14px;
-  font-weight:600;
-  text-decoration:none;
-  margin-left:14px;
-  color:var(--sky);
-}
-.project-links a:hover{
-  text-decoration:underline;
-}
-
-/* --- Secondary Cards Grid --- */
-.grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px;display:flex;flex-direction:column;justify-content:space-between;transition:transform .2s ease}
-.card:hover{transform:translateY(-3px)}
-.card h3{font-size:20px;margin-bottom:8px}
-.card p{color:var(--muted);font-size:15px;flex-grow:1}
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+section{padding:88px 0}
+section>.wrap>h2{font-size:clamp(28px,4vw,44px);margin-bottom:12px}
+.lead{color:var(--muted);max-width:62ch;margin-bottom:34px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
 .chips span{font-size:12px;padding:3px 11px;border-radius:999px;background:#e8eefc;color:#26407f;font-weight:500}
-
+/* about */
 .about{display:grid;gap:40px;grid-template-columns:1.3fr 1fr;align-items:start}
 .about aside{background:var(--space);color:#cfd9f5;border-radius:var(--r);padding:26px}
 .about aside h3{color:#fff;margin-bottom:10px}
@@ -208,20 +78,14 @@ section h2{font-size:clamp(28px,4vw,44px);margin-bottom:12px}
 .dom{--a:#2f6fed;margin-top:46px}
 .dh{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:var(--r);background:color-mix(in srgb,var(--a) 14%,#fff);border-left:4px solid var(--a);box-shadow:0 10px 24px -14px color-mix(in srgb,var(--a) 45%,transparent);margin-bottom:20px}
 .dh .ic{font-size:30px}.dh h3{font-size:24px;color:#3e63b0}.dh p{font-size:14px;color:var(--muted)}
-.vis{position:relative;min-height:300px;border-radius:var(--r);overflow:hidden;isolation:isolate;background:radial-gradient(circle at 85% 90%,color-mix(in srgb,var(--a) 24%,transparent),transparent 55%),linear-gradient(135deg,color-mix(in srgb,var(--a) 14%,#fff),#fff 80%);border:1px solid color-mix(in srgb,var(--a) 22%,#fff);box-shadow:0 14px 28px -14px color-mix(in srgb,var(--a) 60%,transparent)}
-.vis::before{content:"";position:absolute;inset:-40px;z-index:0;background:var(--a);opacity:.24;-webkit-mask-image:var(--m);mask-image:var(--m);-webkit-mask-size:40px 40px;mask-size:40px 40px;animation:drift 22s linear infinite}
-.vis::after{content:"";position:absolute;inset:0;z-index:0;background:radial-gradient(circle at 18% 12%,rgba(255,255,255,.95),transparent 50%);pointer-events:none}
-@keyframes drift{to{transform:translate(-40px,-40px)}}
-.vis .em{position:absolute;inset:0;z-index:1;display:grid;place-items:center;font-size:72px;opacity:.4}
-.vis img{position:absolute;z-index:2;inset:14px;width:calc(100% - 28px);height:calc(100% - 28px);object-fit:contain;border-radius:8px;filter:drop-shadow(0 8px 16px rgba(7,11,26,.18))}
-.vis.ok .em{display:none}
+.vis{display:flex;align-items:center;justify-content:center;min-height:300px;padding:14px;border-radius:var(--r);overflow:hidden;background:#eaf1fd;border:1px solid #d3e1fa}
+.vis img{display:block;width:100%;height:auto;border-radius:8px}
 .beyond{display:grid;grid-template-columns:minmax(260px,380px) 1fr;gap:22px;align-items:stretch}
 .beyond.nophoto{grid-template-columns:1fr}.beyond .ph{margin:0;align-self:start}
 .bcards{display:flex;flex-direction:column;gap:16px}
 .bcards .card{flex:1;display:flex;gap:18px;align-items:center}
 .bcards .card h3{font-size:22px}.bcards .card p{font-size:16px}.bic{font-size:38px;line-height:1}
 @media(max-width:880px){.beyond{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){.vis::before{animation:none}}
 .pc{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch;background:var(--card);border:1px solid #e9eef8;border-radius:20px;padding:24px;margin-bottom:28px;box-shadow:0 24px 48px -20px rgba(79,123,217,.35),0 6px 16px rgba(20,33,61,.05);transition:transform .3s ease,box-shadow .3s ease}
 .pc.rev .vis{order:2}
 .bd{display:flex;flex-direction:column;justify-content:center}
@@ -300,7 +164,6 @@ footer{background:var(--space);color:#8d9bc4;text-align:center;padding:0 0 36px;
 <div id="doms"></div>
 </div></section>
 
-<!-- Beyond Work -->
 <section id="beyond"><div class="wrap">
 <h2>Beyond the job</h2>
 <p class="lead">Space, healthcare and community.</p>
@@ -313,7 +176,6 @@ footer{background:var(--space);color:#8d9bc4;text-align:center;padding:0 0 36px;
 </div>
 </div></section>
 
-<!-- Contact & CTA -->
 <section class="cta" id="contact"><div class="wrap">
 <div class="ph contact"><img src="assets/contact.jpeg" alt="Aikya Sira Kumar" loading="lazy" onerror="this.parentNode.remove()"></div>
 <h2>Ready to build high-performance data systems?</h2>
@@ -323,9 +185,8 @@ footer{background:var(--space);color:#8d9bc4;text-align:center;padding:0 0 36px;
 <a class="btn" href="https://github.com/AikyaKumar" target="_blank" rel="noopener">GitHub</a>
 </div></section>
 </main>
-<footer>© 2026 Aikya Sira Kumar · Built with speed, precision, and zero client bloat</footer>
+<footer>© 2026 Aikya Sira Kumar</footer>
 
-<!-- Starry Sky Animation & Interactive Category Filter Script -->
 <script>
 /* ===== EDIT YOUR CONTENT HERE. Images go in assets/ (img / logo fields). ===== */
 var GH='https://github.com/AikyaKumar';
@@ -341,19 +202,19 @@ var EDU=[
 ];
 var DOM=[
 {id:'air',n:'Airlines &amp; Aviation',e:'✈️',a:'#2f6fed',t:'Networks, demand and passengers',p:[
- {big:1,n:'Airline Network &amp; Passenger Demand Analytics',tag:'Master thesis · Lufthansa Group',d:'Joined global flight schedules with ticketing data into one heterogeneous graph and trained an inductive GraphSAGE model to forecast passenger demand.',hl:['R² of 0.846 on a held-out season, generalising to unseen airports','Edge-aware GraphSAGE in PyTorch Geometric','Node-removal simulations expose critical hubs and suggest reroutes','Presented to Lufthansa’s network planning team'],ch:['PyTorch Geometric','PySpark','GraphSAGE','IATA DDS','NetworkX'],sk:['gnn','ml'],img:'portfolio_thesis.png',l:['Request methodology','#contact']},
- {big:1,n:'Production MLOps &amp; Passenger Segmentation',tag:'Internship · Lufthansa Group',d:'Replaced manual quarterly batch jobs with a governed Azure ML pipeline that classifies corporate vs. leisure travellers across ~300M booking records.',hl:['~30% faster and up to 60% lower compute cost','Databricks, Delta Lake and Unity Catalog at ~300M-record scale','40% relative error reduction vs. baselines','GDPR and AI-policy compliant, handed off with documentation'],ch:['Azure ML','Databricks','XGBoost','FLAML','Unity Catalog'],sk:['mlops','ml'],img:'acs.png',l:['Discuss architecture','#contact']}]},
+ {big:1,n:'Airline Network &amp; Passenger Demand Analytics',tag:'Master thesis · Lufthansa Group',d:'Joined global flight schedules with ticketing data into one heterogeneous graph and trained an inductive GraphSAGE model to forecast passenger demand.',hl:['R² of 0.846 on a held-out season, generalising to unseen airports','Edge-aware GraphSAGE in PyTorch Geometric','Node-removal simulations expose critical hubs and suggest reroutes','Presented to Lufthansa’s network planning team'],ch:['PyTorch Geometric','PySpark','GraphSAGE','IATA DDS','NetworkX'],sk:['gnn','ml'],img:'portfolio_thesis.svg',l:['Request methodology','#contact']},
+ {big:1,n:'Production MLOps &amp; Passenger Segmentation',tag:'Internship · Lufthansa Group',d:'Replaced manual quarterly batch jobs with a governed Azure ML pipeline that classifies corporate vs. leisure travellers across ~300M booking records.',hl:['~30% faster and up to 60% lower compute cost','Databricks, Delta Lake and Unity Catalog at ~300M-record scale','40% relative error reduction vs. baselines','GDPR and AI-policy compliant, handed off with documentation'],ch:['Azure ML','Databricks','XGBoost','FLAML','Unity Catalog'],sk:['mlops','ml'],img:'acs.svg',l:['Discuss architecture','#contact']}]},
 {id:'life',n:'Life Sciences &amp; Pharma',e:'🧬',a:'#12a37f',t:'Agents that read scientific literature',p:[
- {big:1,n:'AI Agents 4 Pharma',tag:'Open source · GenAI',d:'Contributed to a multi-agent framework that reads scientific papers. Added bioRxiv and medRxiv sources and a multimodal pipeline with NVIDIA NeMo Retriever and PaddleOCR.',hl:['Wrote the extraction pipeline from scratch and verified it on 6–8 papers','Text inside tables, charts and infographics extracted and answered via GPT-4o mini','Worked on giving OCR’d numbers the context of what they mean'],ch:['LLM agents','PaddleOCR','NeMo Retriever','GPT-4o mini'],sk:['genai'],img:'pharma_agent.png',l:['GitHub','']}]},
+ {big:1,n:'AI Agents 4 Pharma',tag:'Open source · GenAI',d:'Contributed to a multi-agent framework that reads scientific papers. Added bioRxiv and medRxiv sources and a multimodal pipeline with NVIDIA NeMo Retriever and PaddleOCR.',hl:['Wrote the extraction pipeline from scratch and verified it on 6–8 papers','Text inside tables, charts and infographics extracted and answered via GPT-4o mini','Worked on giving OCR’d numbers the context of what they mean'],ch:['LLM agents','PaddleOCR','NeMo Retriever','GPT-4o mini'],sk:['genai'],img:'pharma_agent.svg',l:['GitHub','']}]},
 {id:'fin',n:'Finance &amp; Responsible AI',e:'🏦',a:'#d98b1f',t:'Trustworthy models for regulated domains',p:[
- {big:1,n:'Responsible AI Credit-Risk Audit',tag:'Independent research · EU AI Act',d:'End-to-end trustworthy-AI audit of a credit-risk model on 10,127 bank customers: leakage diagnosis, fairness, explainability and red-teaming.',hl:['Caught target leakage: 99.2% accuracy fell to a PR-AUC of 0.082 on the leakage-free set (4.6% base rate)','Fairness audit with bootstrap confidence intervals, explained with SHAP and LIME','Red-teamed with feature perturbation and label poisoning, then added a defence','EU AI Act conformity assessment, model card and risk register'],ch:['scikit-learn','SHAP','LIME','Fairness','EU AI Act'],sk:['rai','ml'],img:'responsibleai.png',l:['GitHub repository',GH+'/responsible-ai-credit-risk']}]},
+ {big:1,n:'Responsible AI Credit-Risk Audit',tag:'Independent research · EU AI Act',d:'End-to-end trustworthy-AI audit of a credit-risk model on 10,127 bank customers: leakage diagnosis, fairness, explainability and red-teaming.',hl:['Caught target leakage: 99.2% accuracy fell to a PR-AUC of 0.082 on the leakage-free set (4.6% base rate)','Fairness audit with bootstrap confidence intervals, explained with SHAP and LIME','Red-teamed with feature perturbation and label poisoning, then added a defence','EU AI Act conformity assessment, model card and risk register'],ch:['scikit-learn','SHAP','LIME','Fairness','EU AI Act'],sk:['rai','ml'],img:'responsibleai.svg',l:['GitHub repository',GH+'/responsible-ai-credit-risk']}]},
 {id:'space',n:'Space',e:'🪐',a:'#7c5cff',t:'Orbits, telescopes and hackathons',p:[
- {n:'Exoplanet Classifier',tag:'NASA Space Apps hackathon',d:'Decision-tree and ensemble classifiers on NASA Kepler transit data, with a web tool to retrain interactively.',ch:['Kepler','Streamlit','scikit-learn'],sk:['ml'],img:'exoplanet_clssification.png',l:['View project',GH]}]},
+ {n:'Exoplanet Classifier',tag:'NASA Space Apps hackathon',d:'Decision-tree and ensemble classifiers on NASA Kepler transit data, with a web tool to retrain interactively.',ch:['Kepler','Streamlit','scikit-learn'],sk:['ml'],img:'exoplanet_classification.svg',l:['View project',GH]}]},
 {id:'city',n:'Cities, Mobility &amp; Events',e:'🏙️',a:'#0e9bb0',t:'Streaming and warehousing urban data',p:[
  {n:'NYC Taxi Demand &amp; Weather ELT',tag:'Data engineering · GCP',d:'ELT pipeline joining 1M+ taxi trips with weather logs, dbt marts and Tableau dashboards.',ch:['BigQuery','dbt','Tableau'],sk:['de'],img:'nyc-taxi.png',l:['View pipeline',GH]},
  {n:'EventCast Real-Time Streaming',tag:'Streaming · Distributed systems',d:'Kafka pipeline streaming weather and event data for 300+ German cities into MongoDB, served by a Dockerised Streamlit app.',ch:['Kafka','Docker','MongoDB'],sk:['de'],img:'eventcast.png',l:['View architecture',GH]}]},
 {id:'cloud',n:'Cloud &amp; Security',e:'☁️',a:'#5b6b8c',t:'Finding the unusual in audit logs',p:[
- {n:'GCP Activity Anomaly Detection',tag:'Cybersecurity · Cloud ML',d:'Analysed 1M+ audit logs on BigQuery and Vertex AI to isolate suspicious installs and unauthorised permissions.',ch:['BigQuery','Vertex AI','Anomaly detection'],sk:['ml','de'],img:'gcp-fraud.png',l:['View case study',GH]}]},
+ {n:'GCP Activity Anomaly Detection',tag:'Cybersecurity · Cloud ML',d:'Analysed 1M+ audit logs on BigQuery and Vertex AI to isolate suspicious installs and unauthorised permissions.',ch:['BigQuery','Vertex AI','Anomaly detection'],sk:['ml','de'],img:'gcp-fraud.svg',l:['View case study',GH]}]},
 {id:'sport',n:'Sports &amp; Media',e:'⚽',a:'#e0533d',t:'Language models on match transcripts',p:[
  {n:'Sports Analytics NLP Simulator',tag:'NLP · Deep learning',d:'Fine-tuned RoBERTa on 5,000+ transcripts despite class imbalance, with t-SNE topic clusters and a GPT-2 Q&amp;A assistant in Streamlit.',ch:['RoBERTa','HuggingFace','PyTorch'],sk:['genai','ml'],img:'sports-nlp.png',l:['Explore repo',GH]}]}
 ];
@@ -391,8 +252,6 @@ document.querySelectorAll('.pill').forEach(function(b){var d=b.dataset.k=='d',id
 $('fcount').textContent=n+(n==1?' project':' projects')+(fd!='all'||fs!='all'?' match your filters':'')}
 document.querySelector('.filters').addEventListener('click',function(e){var b=e.target.closest('.pill');if(!b||b.disabled)return;var id=b.dataset.id,d=b.dataset.k=='d';
 if(d)fd=(fd==id?'all':id);else fs=(fs==id?'all':id);apply()});
-var MOT={more:"<circle cx='10' cy='10' r='1.8'/><circle cx='30' cy='30' r='1.8'/>",air:"<path d='M-2 34Q20 -6 42 34' fill='none' stroke='#000' stroke-width='1.6' stroke-dasharray='3 4'/><circle cx='20' cy='14' r='2.4'/>",life:"<polygon points='20,4 33,11.5 33,28.5 20,36 7,28.5 7,11.5' fill='none' stroke='#000' stroke-width='1.5'/><circle cx='20' cy='20' r='2.2'/>",fin:"<rect x='6' y='24' width='6' height='11'/><rect x='17' y='13' width='6' height='22'/><rect x='28' y='19' width='6' height='16'/>",space:"<circle cx='8' cy='10' r='1.6'/><path d='M28 18v12M22 24h12' stroke='#000' stroke-width='1.6'/><circle cx='18' cy='34' r='1.2'/>",city:"<rect x='5' y='18' width='11' height='18' fill='none' stroke='#000' stroke-width='1.6'/><rect x='22' y='7' width='13' height='29' fill='none' stroke='#000' stroke-width='1.6'/>",cloud:"<path d='M8 8L30 14L16 32Z' fill='none' stroke='#000' stroke-width='1.3'/><circle cx='8' cy='8' r='2.6'/><circle cx='30' cy='14' r='2.6'/><circle cx='16' cy='32' r='2.6'/>",sport:"<path d='M0 40L40 0M-10 30L30 -10M10 50L50 10' stroke='#000' stroke-width='1.6'/>"};
-document.querySelectorAll('.dom').forEach(function(el){var id=el.id.slice(2);el.style.setProperty('--m','url("data:image/svg+xml,'+encodeURIComponent("<svg xmlns='http://www.w3.org/2000/svg' width='40' height='40'>"+(MOT[id]||'')+"</svg>")+'")')});
 apply();
 
 (function(){
