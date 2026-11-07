@@ -12,10 +12,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{--ink:#14213d;--muted:#55607a;--bg:#f3f5f9;--card:#fff;--line:#d9dfeb;--sky:#2f6fed;--space:#070b1a;--glow:#9cc2ff;--r:14px}
+:root{--ink:#e6ecfb;--muted:#aab6d8;--bg:#f3f5f9;--card:rgba(12,18,42,.55);--line:rgba(140,165,230,.25);--sky:#7fa8ff;--space:#070b1a;--glow:#9cc2ff;--r:14px}
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:110px}
-body{font:17px/1.65 "IBM Plex Sans",system-ui,sans-serif;color:var(--ink);background:var(--bg)}
+html{scroll-behavior:smooth;scroll-padding-top:110px;background:var(--space)}
+body{font:17px/1.65 "IBM Plex Sans",system-ui,sans-serif;color:#e6ecfb}
 h1,h2,h3,h4{font-family:"Space Grotesk",system-ui,sans-serif;line-height:1.15}
 a{color:var(--sky)}
 :focus-visible{outline:3px solid var(--sky);outline-offset:3px}
@@ -24,61 +24,81 @@ nav{position:fixed;inset:0 0 auto;z-index:100;display:flex;justify-content:space
 nav b{font-family:"Space Grotesk";font-size:18px}
 nav div a{color:#cfd9f5;text-decoration:none;margin-left:20px;font-size:15px}
 nav div a:hover{color:#fff}
-.hero{position:relative;min-height:100svh;background:var(--space);color:#fff;display:flex;align-items:center;overflow:hidden}
-#sky{position:absolute;inset:0;width:100%;height:100%}
+.hero{position:relative;min-height:100svh;color:#fff;display:flex;align-items:center;overflow:hidden}
+#sky{position:fixed;inset:0;width:100%;height:100%;z-index:-1}
 .hero .wrap{position:relative;padding-top:90px;padding-bottom:70px}
 .hero p.hi{color:var(--glow);margin-bottom:14px;font-weight:500}
 .hero h1{font-size:clamp(36px,6.5vw,72px);max-width:17ch;letter-spacing:-.02em}
 .hero p.sub{max-width:58ch;margin:22px 0 32px;color:#cfd9f5;font-size:19px}
+.hero p.sub a{color:var(--glow);font-weight:600}
 .btn{display:inline-block;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:600;margin:0 10px 10px 0;border:1.5px solid #fff;color:#fff;transition:transform .2s}
 .btn.main{background:#fff;color:var(--space)}
 .btn:hover{transform:translateY(-2px)}
 .tag{display:inline-block;margin-top:24px;padding:6px 16px;border:1px solid #3b4a7a;border-radius:999px;color:#cfd9f5;font-size:14px}
 .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#4ade80;margin-right:8px}
 section{padding:88px 0}
-section>.wrap>h2{font-size:clamp(28px,4vw,44px);margin-bottom:12px}
-.lead{color:var(--muted);max-width:62ch;margin-bottom:34px}
+section>.wrap>h2{font-size:clamp(28px,4vw,44px);margin-bottom:12px;color:#fff}
+.lead{color:#b9c5e6;max-width:62ch;margin-bottom:34px}
+
+/* ===== Dark, see-through (glass) cards ===== */
+.job,.pc,.cc,.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  -webkit-backdrop-filter:blur(14px) saturate(120%);
+  backdrop-filter:blur(14px) saturate(120%);
+  box-shadow:0 20px 44px -22px rgba(0,0,0,.6);
+}
+.job h3,.pc h4,.cc h4,.card h3{color:#fff}
+
+/* chips */
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.chips span{font-size:12px;padding:3px 11px;border-radius:999px;background:#e8eefc;color:#26407f;font-weight:500}
+.chips span{font-size:12px;padding:3px 11px;border-radius:999px;background:rgba(141,180,240,.14);color:#cfe0ff;font-weight:500}
+
 /* about */
 .about{display:grid;gap:40px;grid-template-columns:1.3fr 1fr;align-items:start}
-.about aside{background:var(--space);color:#cfd9f5;border-radius:var(--r);padding:26px}
+.about aside{background:var(--card);border:1px solid var(--line);color:#cfd9f5;border-radius:var(--r);padding:26px;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
 .about aside h3{color:#fff;margin-bottom:10px}
 .about aside li{margin:8px 0 8px 18px}
 .ph{overflow:hidden;border-radius:var(--r);background:#dfe6f5;margin-bottom:22px}
 .ph img{width:100%;height:auto;display:block}
 .ph.contact{width:140px;aspect-ratio:1;border-radius:50%;margin:0 auto 24px;border:3px solid #3b4a7a}
 .ph.contact img{height:100%;object-fit:cover}
+
 /* experience + education */
 .cards{display:flex;flex-direction:column;gap:20px}
-.job{display:grid;grid-template-columns:64px 1fr;gap:20px;background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:26px}
-.logo{width:64px;height:64px;border:1px solid var(--line);border-radius:12px;background:#f8faff;display:grid;place-items:center;font-size:26px;overflow:hidden}
-.logo span{font:700 15px "Space Grotesk",sans-serif;color:var(--sky)}
-.logo img{width:100%;height:100%;object-fit:contain;padding:6px}
+.job{display:grid;grid-template-columns:72px 1fr;gap:20px;color:var(--ink);border-radius:var(--r);padding:26px}
+.logo{position:relative;flex:none;width:72px;height:72px;padding:9px;border:1px solid var(--line);border-radius:14px;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.logo span{position:absolute;inset:0;display:grid;place-items:center;font:700 15px "Space Grotesk",sans-serif;color:#2f6fed}
+.logo img{position:relative;display:block;width:100%;height:100%;object-fit:contain}
 .job h3{font-size:21px}
 .sub2{color:var(--muted);font-size:14px;margin:2px 0 10px}
-.badge{display:inline-block;margin-left:8px;font:600 11px "IBM Plex Sans";padding:2px 10px;border-radius:999px;background:#e6f7ee;color:#157347;vertical-align:middle}
+.badge{display:inline-block;margin-left:8px;font:600 11px "IBM Plex Sans";padding:2px 10px;border-radius:999px;background:rgba(74,222,128,.15);color:#6ee7a0;vertical-align:middle}
 .stats{display:flex;flex-wrap:wrap;gap:28px;margin:12px 0}
 .stats b{display:block;font:700 30px "Space Grotesk";color:var(--sky);line-height:1}
 .stats span{font-size:13px;color:var(--muted)}
 .job ul{margin:8px 0 0 18px;color:var(--muted);font-size:15px}.job li{margin:4px 0}
 .edu{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .edu .job{grid-template-columns:1fr}.edu .top{display:flex;gap:16px;align-items:center}
+
 /* projects by domain */
 [hidden]{display:none!important}
 .filters{margin-bottom:6px}.frow{display:flex;gap:12px;align-items:flex-start;margin:10px 0}
-.frow>b{min-width:64px;padding-top:7px;font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.06em}
+.frow>b{min-width:64px;padding-top:7px;font-size:12px;color:#b9c5e6;text-transform:uppercase;letter-spacing:.06em}
 .frow>div{display:flex;flex-wrap:wrap;gap:8px}
-.pill{font:600 14px "IBM Plex Sans",sans-serif;padding:6px 14px;border-radius:999px;border:1.5px solid var(--a);color:var(--t,var(--a));background:#fff;cursor:pointer}
-.pill[data-k=d]:not([data-id=all]){--a:#8db4f0;--t:#3e63b0}
-.pill[data-k=s]:not([data-id=all]){--a:#8fd3b0;--t:#2b7a55}
-.lk{color:#3e63b0}.chips span.x.sk{background:#dff4e8;color:#2b7a55}
-.pill:hover:not(:disabled){background:color-mix(in srgb,var(--a) 12%,#fff)}.pill.on{background:var(--a);color:#fff}.pill[data-k]:not([data-id=all]).on{color:#14213d}
-.pill:disabled{opacity:.35;cursor:not-allowed}#fcount{font-size:14px;color:var(--muted)}.sk{font-weight:600}
+.pill{font:600 14px "IBM Plex Sans",sans-serif;padding:6px 14px;border-radius:999px;border:1.5px solid var(--a);color:var(--t,var(--a));background:rgba(12,18,42,.5);cursor:pointer;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.pill[data-k=d]:not([data-id=all]){--a:#8db4f0;--t:#9cc2ff}
+.pill[data-k=s]:not([data-id=all]){--a:#8fd3b0;--t:#8fd3b0}
+.pill[data-id=all]{--a:#cfd9f5 !important;--t:#cfd9f5}
+.lk{color:#9cc2ff;font-weight:600;font-size:14px;text-decoration:none;margin-top:14px}
+.chips span.x.sk{background:rgba(143,211,176,.16);color:#a6e8c6}
+.pill:hover:not(:disabled){background:color-mix(in srgb,var(--a) 22%,transparent)}
+.pill.on{background:var(--a);color:#070b1a}
+.pill[data-k]:not([data-id=all]).on,.pill[data-id=all].on{color:#070b1a}
+.pill:disabled{opacity:.35;cursor:not-allowed}#fcount{font-size:14px;color:#b9c5e6}.sk{font-weight:600}
 .dom{--a:#2f6fed;margin-top:46px}
-.dh{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:var(--r);background:color-mix(in srgb,var(--a) 14%,#fff);border-left:4px solid var(--a);box-shadow:0 10px 24px -14px color-mix(in srgb,var(--a) 45%,transparent);margin-bottom:20px}
-.dh .ic{font-size:30px}.dh h3{font-size:24px;color:#3e63b0}.dh p{font-size:14px;color:var(--muted)}
-.vis{display:flex;align-items:center;justify-content:center;min-height:300px;padding:14px;border-radius:var(--r);overflow:hidden;background:#eaf1fd;border:1px solid #d3e1fa}
+.dh{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:var(--r);background:rgba(141,180,240,.10);border-left:4px solid #8db4f0;margin-bottom:20px}
+.dh .ic{font-size:30px}.dh h3{font-size:24px;color:#fff}.dh p{font-size:14px;color:var(--muted)}
+.vis{display:flex;align-items:center;justify-content:center;min-height:300px;padding:14px;border-radius:var(--r);overflow:hidden;background:rgba(255,255,255,.05);border:1px solid var(--line)}
 .vis img{display:block;width:100%;height:auto;border-radius:8px}
 .beyond{display:grid;grid-template-columns:minmax(260px,380px) 1fr;gap:22px;align-items:stretch}
 .beyond.nophoto{grid-template-columns:1fr}.beyond .ph{margin:0;align-self:start}
@@ -86,41 +106,49 @@ section>.wrap>h2{font-size:clamp(28px,4vw,44px);margin-bottom:12px}
 .bcards .card{flex:1;display:flex;gap:18px;align-items:center}
 .bcards .card h3{font-size:22px}.bcards .card p{font-size:16px}.bic{font-size:38px;line-height:1}
 @media(max-width:880px){.beyond{grid-template-columns:1fr}}
-.pc{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch;background:var(--card);border:1px solid #e9eef8;border-radius:20px;padding:24px;margin-bottom:28px;box-shadow:0 24px 48px -20px rgba(79,123,217,.35),0 6px 16px rgba(20,33,61,.05);transition:transform .3s ease,box-shadow .3s ease}
+.pc{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch;color:var(--ink);border-radius:20px;padding:24px;margin-bottom:28px;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
 .pc.rev .vis{order:2}
 .bd{display:flex;flex-direction:column;justify-content:center}
-.meta{font-size:12px;font-weight:700;color:#4a6fb8;text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px}
+.meta{font-size:12px;font-weight:700;color:#8db4f0;text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px}
 .bd h4{font-size:clamp(21px,2vw,27px);margin-bottom:10px}
 .d{color:var(--muted);font-size:16px;margin-bottom:12px}
 .bd ul{margin:0 0 4px 20px;color:var(--muted);font-size:15px}.bd li{margin:5px 0}
-.lk{font-weight:600;font-size:14px;text-decoration:none;margin-top:14px}
-.chips span.x{background:color-mix(in srgb,var(--a) 14%,#fff);color:inherit}
+.chips span.x{background:rgba(141,180,240,.14);color:#cfe0ff}
 .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
-.cc{display:flex;flex-direction:column;background:var(--card);border:1px solid #e9eef8;border-radius:18px;overflow:hidden;box-shadow:0 20px 40px -18px rgba(79,123,217,.35),0 6px 14px rgba(20,33,61,.05);transition:transform .3s ease,box-shadow .3s ease}
-.pc:hover,.cc:hover{transform:translateY(-6px);box-shadow:0 30px 56px -20px rgba(79,123,217,.45),0 8px 20px rgba(20,33,61,.07)}
+.cc{display:flex;flex-direction:column;color:var(--ink);border-radius:18px;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
+.pc:hover,.cc:hover{transform:translateY(-6px);border-color:rgba(156,194,255,.5);box-shadow:0 30px 56px -20px rgba(47,111,237,.35),0 8px 20px rgba(0,0,0,.4)}
 @media(prefers-reduced-motion:reduce){.pc:hover,.cc:hover{transform:none}}
 .cc .vis{min-height:170px;border-radius:0;border:0;box-shadow:none}
 .cc .bd{padding:20px;justify-content:flex-start;flex:1}
 .cc h4{font-size:19px}.cc .d{font-size:15px}
-.cta{background:var(--space);color:#fff;text-align:center}
+.cta{color:#fff;text-align:center}
 .cta h2{margin-bottom:14px}.cta p{color:#cfd9f5;max-width:52ch;margin:0 auto 28px}
-.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:24px}
+.card{color:var(--ink);border-radius:var(--r);padding:24px}
 .card h3{font-size:20px;margin-bottom:6px}.card p{color:var(--muted);font-size:15px}
 .grid3{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-footer{background:var(--space);color:#8d9bc4;text-align:center;padding:0 0 36px;font-size:14px}
+footer{color:#8d9bc4;text-align:center;padding:0 0 36px;font-size:14px}
 @media(max-width:880px){.about,.pc,.edu{grid-template-columns:1fr}.pc.rev .vis{order:0}.job{grid-template-columns:1fr}nav div a:not(:last-child){display:none}section{padding:64px 0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+.about{align-items:stretch}
+.about-text{display:flex;flex-direction:column;justify-content:space-between;gap:26px}
+.about-text .lead{margin-bottom:0;font-size:19px}
+.grp{font:600 12px/1 "IBM Plex Sans",sans-serif;text-transform:uppercase;letter-spacing:.08em;color:#8db4f0;margin-bottom:14px}
+.pt{padding-left:16px;border-left:3px solid #8db4f0;margin-bottom:16px}
+.pt:last-child{margin-bottom:0}
+.pt strong{display:block;color:#fff;font:700 19px "Space Grotesk",sans-serif;margin-bottom:3px}
+.pt p{color:#b9c5e6;font-size:16px}
+
 </style>
 </head>
 <body>
+<canvas id="sky" aria-hidden="true"></canvas>
 <nav aria-label="Main"><b>Aikya Sira Kumar</b><div><a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#work">Projects</a><a href="#contact">Contact</a></div></nav>
 
 <header class="hero" id="top">
-<canvas id="sky" aria-hidden="true"></canvas>
 <div class="wrap">
 <p class="hi">Hi, I’m Aikya Sira Kumar.</p>
-<h1>I turn complex flight, graph &amp; healthcare data into production AI.</h1>
-<p class="sub">Data Scientist &amp; ML Engineer specialising in graph neural networks, scalable MLOps and responsible AI. I built production frameworks at Lufthansa Group and I’m ready for high-impact roles.</p>
+<h1>Data is data. I turn it into production AI, in any domain.</h1>
+<p class="sub">Data Scientist &amp; ML Engineer. From 3,000+ restaurant locations to ~300M airline bookings, cutting compute cost by up to 60%. Need proof? <a href="#experience">Walk through my journey.</a></p>
 <a class="btn main" href="#work">View projects</a><a class="btn" href="assets/resume.pdf">Download resume</a><a class="btn" href="#contact">Contact me</a>
 <br><span class="tag"><span class="dot"></span>Open to full-time roles · Available immediately</span>
 </div>
@@ -128,14 +156,26 @@ footer{background:var(--space);color:#8d9bc4;text-align:center;padding:0 0 36px;
 
 <main>
 <section id="about"><div class="wrap">
-<h2>Three things you should know about me</h2>
+<h2>What I bring, and how I work</h2>
 <div class="about">
-<div>
+<div class="about-text">
 <p class="lead">I like problems where data has a shape: flight networks, orbits, molecules.</p>
-<p><strong>I scale production ML.</strong> At Lufthansa Group I re-engineered pipelines across ~300M booking records, cutting runtime by ~30% and compute cost by up to 60% on Azure ML and Databricks.</p><br>
-<p><strong>I build honest, leakage-free AI.</strong> I run feature ablations, red-teaming and EU AI Act checks so models hold up in the real world.</p><br>
-<p><strong>I connect maths to decisions.</strong> I defended a GraphSAGE demand model to Lufthansa’s network planning team and I explain results to non-technical colleagues.</p>
+ 
+<div class="pgroup">
+<h3 class="grp">What I bring to a team</h3>
+<div class="pt"><strong>I ship, not just prototype.</strong><p>At Lufthansa Group I replaced manual quarterly batch jobs with a governed Azure ML pipeline, complete with automated deployment gates and GDPR-compliant data handling.</p></div>
+<div class="pt"><strong>I go deep when it matters.</strong><p>My master thesis trained an inductive GraphSAGE model on airline schedule and ticketing data that forecasts demand even for airports it never saw in training.</p></div>
+<div class="pt"><strong>I translate.</strong><p>I presented my thesis results to Lufthansa’s network planning team, and I explain models to planners and non-technical colleagues so results turn into decisions.</p></div>
 </div>
+ 
+<div class="pgroup">
+<h3 class="grp">How I work</h3>
+<div class="pt"><strong>I start with the decision, not the model.</strong><p>The first question is what someone needs to do differently. For the airline network, that led to node-removal simulations that show which hubs are critical and where to reroute.</p></div>
+<div class="pt"><strong>I distrust a good score.</strong><p>In my credit-risk audit, 99.2% accuracy fell to a PR-AUC of 0.082 once I removed target leakage. Ablations, red-teaming and EU AI Act checks are how I make sure results hold up.</p></div>
+<div class="pt"><strong>I leave things runnable.</strong><p>Every project ends with documentation the next person can use: a handoff guide for the internship pipeline, a model card and risk register for the audit.</p></div>
+</div>
+</div>
+ 
 <aside><div class="ph"><img src="assets/about.jpeg" alt="Aikya Sira Kumar" onerror="this.parentNode.remove()"></div><h3>Quick facts</h3><ul>
 <li>M.Sc. Applied Data Science and Analytics, SRH University Heidelberg (2026)</li>
 <li>Thesis and internship, Lufthansa Group (2026)</li>
@@ -145,7 +185,7 @@ footer{background:var(--space);color:#8d9bc4;text-align:center;padding:0 0 36px;
 </div>
 </div></section>
 
-<section id="experience" style="background:#fff"><div class="wrap">
+<section id="experience"><div class="wrap">
 <h2>Three years. One trajectory.</h2>
 <p class="lead">From keeping pipelines at 99.9% availability to shipping governed ML at airline scale.</p>
 <div class="cards" id="exp"></div>
@@ -157,7 +197,7 @@ footer{background:var(--space);color:#8d9bc4;text-align:center;padding:0 0 36px;
 <div class="edu" id="edu"></div>
 </div></section>
 
-<section id="work" style="background:#fff;padding-top:60px"><div class="wrap">
+<section id="work" style="padding-top:60px"><div class="wrap">
 <h2>Projects</h2>
 <p class="lead">Filter by industry domain, by skill, or both. A project can belong to several skills.</p>
 <div class="filters"><div class="frow"><b>Domain</b><div id="fd"></div></div><div class="frow"><b>Skill</b><div id="fs"></div></div><p id="fcount"></p></div>
@@ -193,7 +233,7 @@ var GH='https://github.com/AikyaKumar';
 var EXP=[
 {logo:'logo-lufthansa.png',e:'LH',role:'Data Science Intern',org:'Lufthansa Group · Frankfurt',date:'Jan 2026 – Sep 2026',stats:[['~300M','booking records'],['~30%','faster runtime'],['up to 60%','lower compute cost']],hl:['Built Azure ML MLOps pipelines replacing legacy ADF batch workflows','Processed records via Databricks Delta Tables and Unity Catalog without data leakage','Benchmarked XGBoost, FLAML AutoML and Random Forest with automated deployment gates'],ch:['Azure ML','Databricks','XGBoost','Delta Lake','ADF']},
 {logo:'logo-lufthansa.png',e:'LH',role:'Master Thesis Researcher',org:'Lufthansa Group · Frankfurt &amp; Heidelberg',date:'Apr 2026 – Sep 2026',stats:[['0.846','R² on unseen season']],hl:['Built inductive GraphSAGE models in PyTorch Geometric on IATA DDS ticketing and OAG schedule data','Found structurally critical hub airports with node-removal simulations'],ch:['PyTorch Geometric','PySpark','NetworkX','GraphSAGE']},
-{logo:'logo-capgemini.png',e:'CG',role:'Senior Data Analyst',badge:'Promoted',org:'Capgemini · Hyderabad',date:'Apr 2023 – Sep 2024',stats:[['3,000+','websites monitored'],['99.9%','availability supported']],hl:['Maintained automated KPI monitoring and validation workflows','Built ELT and data validation pipelines in Python and SQL, cutting manual debugging'],ch:['Python','SQL','KPI monitoring','ELT']},
+{logo:'logo-capgemini.png',e:'CG',role:'Senior Data Analyst',badge:'Promoted',org:'Capgemini · Hyderabad',date:'Apr 2023 – Sep 2024',stats:[['3,000+','locations monitored'],['99.9%','availability supported']],hl:['Maintained automated KPI monitoring and validation workflows','Built ELT and data validation pipelines in Python and SQL, cutting manual debugging'],ch:['Python','SQL','KPI monitoring','ELT']},
 {logo:'logo-capgemini.png',e:'CG',role:'Data Analyst',org:'Capgemini · Hyderabad',date:'Sep 2022 – Apr 2023',hl:['Started on the same monitoring and data quality team before the promotion'],ch:['Python','SQL']}
 ];
 var EDU=[
@@ -202,21 +242,21 @@ var EDU=[
 ];
 var DOM=[
 {id:'air',n:'Airlines &amp; Aviation',e:'✈️',a:'#2f6fed',t:'Networks, demand and passengers',p:[
- {big:1,n:'Airline Network &amp; Passenger Demand Analytics',tag:'Master thesis · Lufthansa Group',d:'Joined global flight schedules with ticketing data into one heterogeneous graph and trained an inductive GraphSAGE model to forecast passenger demand.',hl:['R² of 0.846 on a held-out season, generalising to unseen airports','Edge-aware GraphSAGE in PyTorch Geometric','Node-removal simulations expose critical hubs and suggest reroutes','Presented to Lufthansa’s network planning team'],ch:['PyTorch Geometric','PySpark','GraphSAGE','IATA DDS','NetworkX'],sk:['gnn','ml'],img:'assets/portfolio_thesis.svg',l:['Request methodology','#contact']},
- {big:1,n:'Production MLOps &amp; Passenger Segmentation',tag:'Internship · Lufthansa Group',d:'Replaced manual quarterly batch jobs with a governed Azure ML pipeline that classifies corporate vs. leisure travellers across ~300M booking records.',hl:['~30% faster and up to 60% lower compute cost','Databricks, Delta Lake and Unity Catalog at ~300M-record scale','40% relative error reduction vs. baselines','GDPR and AI-policy compliant, handed off with documentation'],ch:['Azure ML','Databricks','XGBoost','FLAML','Unity Catalog'],sk:['mlops','ml'],img:'asstes/acs.png',l:['Discuss architecture','#contact']}]},
+ {big:1,n:'Airline Network &amp; Passenger Demand Analytics',tag:'Master thesis · Lufthansa Group',d:'Joined global flight schedules with ticketing data into one heterogeneous graph and trained an inductive GraphSAGE model to forecast passenger demand.',hl:['R² of 0.846 on a held-out season, generalising to unseen airports','Edge-aware GraphSAGE in PyTorch Geometric','Node-removal simulations expose critical hubs and suggest reroutes','Presented to Lufthansa’s network planning team'],ch:['PyTorch Geometric','PySpark','GraphSAGE','IATA DDS','NetworkX'],sk:['gnn','ml'],img:'portfolio_thesis.png',l:['Request methodology','#contact']},
+ {big:1,n:'Production MLOps &amp; Passenger Segmentation',tag:'Internship · Lufthansa Group',d:'Replaced manual quarterly batch jobs with a governed Azure ML pipeline that classifies corporate vs. leisure travellers across ~300M booking records.',hl:['~30% faster and up to 60% lower compute cost','Databricks, Delta Lake and Unity Catalog at ~300M-record scale','40% relative error reduction vs. baselines','GDPR and AI-policy compliant, handed off with documentation'],ch:['Azure ML','Databricks','XGBoost','FLAML','Unity Catalog'],sk:['mlops','ml'],img:'acs.png',l:['Discuss architecture','#contact']}]},
 {id:'life',n:'Life Sciences &amp; Pharma',e:'🧬',a:'#12a37f',t:'Agents that read scientific literature',p:[
- {big:1,n:'AI Agents 4 Pharma',tag:'Open source · GenAI',d:'Contributed to a multi-agent framework that reads scientific papers. Added bioRxiv and medRxiv sources and a multimodal pipeline with NVIDIA NeMo Retriever and PaddleOCR.',hl:['Wrote the extraction pipeline from scratch and verified it on 6–8 papers','Text inside tables, charts and infographics extracted and answered via GPT-4o mini','Worked on giving OCR’d numbers the context of what they mean'],ch:['LLM agents','PaddleOCR','NeMo Retriever','GPT-4o mini'],sk:['genai'],img:'assets/pharma_agent.png',l:['GitHub','']}]},
+ {big:1,n:'AI Agents 4 Pharma',tag:'Open source · GenAI',d:'Contributed to a multi-agent framework that reads scientific papers. Added bioRxiv and medRxiv sources and a multimodal pipeline with NVIDIA NeMo Retriever and PaddleOCR.',hl:['Wrote the extraction pipeline from scratch and verified it on 6–8 papers','Text inside tables, charts and infographics extracted and answered via GPT-4o mini','Worked on giving OCR’d numbers the context of what they mean'],ch:['LLM agents','PaddleOCR','NeMo Retriever','GPT-4o mini'],sk:['genai'],img:'pharma_agent.png',l:['GitHub repository','https://github.com/VirtualPatientEngine/AIAgents4Pharma']}]},
 {id:'fin',n:'Finance &amp; Responsible AI',e:'🏦',a:'#d98b1f',t:'Trustworthy models for regulated domains',p:[
- {big:1,n:'Responsible AI Credit-Risk Audit',tag:'Independent research · EU AI Act',d:'End-to-end trustworthy-AI audit of a credit-risk model on 10,127 bank customers: leakage diagnosis, fairness, explainability and red-teaming.',hl:['Caught target leakage: 99.2% accuracy fell to a PR-AUC of 0.082 on the leakage-free set (4.6% base rate)','Fairness audit with bootstrap confidence intervals, explained with SHAP and LIME','Red-teamed with feature perturbation and label poisoning, then added a defence','EU AI Act conformity assessment, model card and risk register'],ch:['scikit-learn','SHAP','LIME','Fairness','EU AI Act'],sk:['rai','ml'],img:'assets/responsibleai.png',l:['GitHub repository',GH+'/responsible-ai-credit-risk']}]},
+ {big:1,n:'Responsible AI Credit-Risk Audit',tag:'Independent research · EU AI Act',d:'End-to-end trustworthy-AI audit of a credit-risk model on 10,127 bank customers: leakage diagnosis, fairness, explainability and red-teaming.',hl:['Caught target leakage: 99.2% accuracy fell to a PR-AUC of 0.082 on the leakage-free set (4.6% base rate)','Fairness audit with bootstrap confidence intervals, explained with SHAP and LIME','Red-teamed with feature perturbation and label poisoning, then added a defence','EU AI Act conformity assessment, model card and risk register'],ch:['scikit-learn','SHAP','LIME','Fairness','EU AI Act'],sk:['rai','ml'],img:'responsibleai.png',l:['GitHub repository',GH+'/responsible-ai-credit-risk']}]},
 {id:'space',n:'Space',e:'🪐',a:'#7c5cff',t:'Orbits, telescopes and hackathons',p:[
- {n:'Exoplanet Classifier',tag:'NASA Space Apps hackathon',d:'Decision-tree and ensemble classifiers on NASA Kepler transit data, with a web tool to retrain interactively.',ch:['Kepler','Streamlit','scikit-learn'],sk:['ml'],img:'assets/exoplanet_classification.png',l:['View project',GH]}]},
+ {big:1,rev:1,n:'Exoplanet Classifier',tag:'NASA Space Apps hackathon',d:'Decision-tree and ensemble classifiers on NASA Kepler transit data, with a web tool to retrain interactively.',hl:['Trained on the Kepler cumulative archive: orbital period, transit depth, SNR and stellar properties','Three outputs: confirmed planet, planetary candidate or false positive','Streamlit dashboard with file upload to retrain the model'],ch:['Kepler','Streamlit','scikit-learn'],sk:['ml'],img:'exoplanet_classification.png',l:['GitHub repository','https://github.com/AikyaKumar/Kepler-Exoplanet-Classifier']}]},
 {id:'city',n:'Cities, Mobility &amp; Events',e:'🏙️',a:'#0e9bb0',t:'Streaming and warehousing urban data',p:[
- {n:'NYC Taxi Demand &amp; Weather ELT',tag:'Data engineering · GCP',d:'ELT pipeline joining 1M+ taxi trips with weather logs, dbt marts and Tableau dashboards.',ch:['BigQuery','dbt','Tableau'],sk:['de'],img:'nyc-taxi.png',l:['View pipeline',GH]},
- {n:'EventCast Real-Time Streaming',tag:'Streaming · Distributed systems',d:'Kafka pipeline streaming weather and event data for 300+ German cities into MongoDB, served by a Dockerised Streamlit app.',ch:['Kafka','Docker','MongoDB'],sk:['de'],img:'eventcast.png',l:['View architecture',GH]}]},
+ {big:1,rev:1,n:'NYC Taxi Demand &amp; Weather ELT',tag:'Data engineering · GCP',d:'ELT pipeline joining 1M+ taxi trips with weather logs, dbt marts and Tableau dashboards.',hl:['1M+ taxi trips joined with weather logs in BigQuery','Transformations modelled as dbt marts','Tableau dashboards for demand and weather'],ch:['BigQuery','dbt','Tableau'],sk:['de'],img:'nyc-taxi.png',l:['GitHub repository','https://github.com/AikyaKumar/NYC-Taxi-Demand-with-Weather-Impact']},
+ {n:'EventCast Real-Time Streaming',tag:'Streaming · Distributed systems',d:'Kafka pipeline streaming weather and event data for 300+ German cities into MongoDB, served by a Dockerised Streamlit app.',ch:['Kafka','Docker','MongoDB'],sk:['de'],l:['GitHub repository','https://github.com/AikyaKumar/SunCafe']}]},
 {id:'cloud',n:'Cloud &amp; Security',e:'☁️',a:'#5b6b8c',t:'Finding the unusual in audit logs',p:[
- {n:'GCP Activity Anomaly Detection',tag:'Cybersecurity · Cloud ML',d:'Analysed 1M+ audit logs on BigQuery and Vertex AI to isolate suspicious installs and unauthorised permissions.',ch:['BigQuery','Vertex AI','Anomaly detection'],sk:['ml','de'],img:'gcp-fraud.svg',l:['View case study',GH]}]},
+ {n:'GCP Activity Anomaly Detection',tag:'Cybersecurity · Cloud ML',d:'Analysed 1M+ audit logs on BigQuery and Vertex AI to isolate suspicious installs and unauthorised permissions.',ch:['BigQuery','Vertex AI','Anomaly detection'],sk:['ml','de'],l:['GitHub repository','https://github.com/AikyaKumar/Fraud-Detection-BigQuery']}]},
 {id:'sport',n:'Sports &amp; Media',e:'⚽',a:'#e0533d',t:'Language models on match transcripts',p:[
- {n:'Sports Analytics NLP Simulator',tag:'NLP · Deep learning',d:'Fine-tuned RoBERTa on 5,000+ transcripts despite class imbalance, with t-SNE topic clusters and a GPT-2 Q&amp;A assistant in Streamlit.',ch:['RoBERTa','HuggingFace','PyTorch'],sk:['genai','ml'],img:'sports-nlp.png',l:['Explore repo',GH]}]}
+ {n:'Sports Analytics NLP Simulator',tag:'NLP · Deep learning',d:'Fine-tuned RoBERTa on 5,000+ transcripts despite class imbalance, with t-SNE topic clusters and a GPT-2 Q&amp;A assistant in Streamlit.',ch:['RoBERTa','HuggingFace','PyTorch'],sk:['genai','ml'],l:['Request methodology','#contact']}]}
 ];
 /* Only these domains get a filter button; every other project goes under "More projects" (still filterable by skill) */
 var KEEP={air:1,life:1,space:1},MORE={id:'more',n:'More projects',e:'',a:'#5b6b8c',t:'Responsible AI, data engineering, cloud and NLP',hide:1,p:[]};
@@ -231,7 +271,7 @@ function row(o){var s=o.stats?'<div class="stats">'+o.stats.map(function(x){retu
 return '<article class="job"><div>'+logo(o)+'</div><div><h3>'+o.role+(o.badge?'<span class="badge">'+o.badge+'</span>':'')+'</h3><p class="sub2">'+o.org+' · '+o.date+'</p>'+s+li(o.hl)+(o.ch?chips(o.ch):'')+'</div></article>'}
 $('exp').innerHTML=EXP.map(row).join('');
 $('edu').innerHTML=EDU.map(function(o){return '<article class="job"><div class="top">'+logo(o)+'<div><h3>'+o.role+(o.badge?'<span class="badge">'+o.badge+'</span>':'')+'</h3><p class="sub2" style="margin:0">'+o.org+' · '+o.date+'</p></div></div>'+li(o.hl)+'</article>'}).join('');
-function vis(p,d){return '<div class="vis"><img src="assets/'+p.img+'" alt="'+p.n+' diagram" loading="lazy" onerror="this.remove()" onload="this.parentNode.classList.add(\'ok\')"></div>'}
+function vis(p,d){if(!p.img)return '';return '<div class="vis"><img src="assets/'+p.img+'" alt="'+p.n+' diagram" loading="lazy" onerror="this.remove()" onload="this.parentNode.classList.add(\'ok\')"></div>'}
 function link(l){var u=l[1]||GH,ext=u.charAt(0)!='#';return '<a class="lk" href="'+u+'"'+(ext?' target="_blank" rel="noopener"':'')+'>'+l[0]+' ↗</a>'}
 var SK=[['gnn','Graph ML'],['ml','Machine Learning'],['mlops','MLOps &amp; Cloud'],['genai','GenAI &amp; NLP'],['rai','Responsible AI'],['de','Data Engineering']],SKN={},fd='all',fs='all',ALL=[];
 SK.forEach(function(k){SKN[k[0]]=k[1]});
@@ -242,7 +282,7 @@ $('fs').innerHTML=pill('s','all','All skills','#14213d')+SK.map(function(k){retu
 $('doms').innerHTML=DOM.map(function(d){var big=d.p.filter(function(p){return p.big}),sm=d.p.filter(function(p){return !p.big});
 d.p.forEach(function(p){ALL.push({d:d.id,s:p.sk})});
 return '<div class="dom" id="d-'+d.id+'" style="--a:'+d.a+'"><div class="dh">'+(d.e?'<span class="ic">'+d.e+'</span>':'')+'<div><h3>'+d.n+'</h3><p>'+d.t+'</p></div></div>'+
-big.map(function(p,i){return '<article class="pc'+(i%2?' rev':'')+'" data-s="'+p.sk.join(' ')+'">'+vis(p,d)+'<div class="bd"><div class="meta">'+p.tag+'</div><h4>'+p.n+'</h4><p class="d">'+p.d+'</p>'+li(p.hl)+tags(p)+link(p.l)+'</div></article>'}).join('')+
+big.map(function(p,i){return '<article class="pc'+(p.rev||i%2?' rev':'')+'" data-s="'+p.sk.join(' ')+'">'+vis(p,d)+'<div class="bd"><div class="meta">'+p.tag+'</div><h4>'+p.n+'</h4><p class="d">'+p.d+'</p>'+li(p.hl)+tags(p)+link(p.l)+'</div></article>'}).join('')+
 (sm.length?'<div class="grid">'+sm.map(function(p){return '<article class="cc" data-s="'+p.sk.join(' ')+'">'+vis(p,d)+'<div class="bd"><div class="meta">'+p.tag+'</div><h4>'+p.n+'</h4><p class="d">'+p.d+'</p>'+tags(p)+link(p.l)+'</div></article>'}).join('')+'</div>':'')+'</div>'}).join('');
 function has(d,k){return ALL.some(function(p){return (d=='all'||p.d==d)&&(k=='all'||p.s.indexOf(k)>-1)})}
 function apply(){var n=0;
