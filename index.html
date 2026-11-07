@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
@@ -11,57 +11,104 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<script>
+/* apply the saved background theme before the page paints (no flash) */
+(function(){var t='dark';try{t=localStorage.getItem('theme')||'dark'}catch(e){}document.documentElement.setAttribute('data-theme',t==='gold'?'gold':'dark')})();
+</script>
 <style>
-:root{--ink:#e6ecfb;--muted:#aab6d8;--bg:#f3f5f9;--card:rgba(12,18,42,.55);--line:rgba(140,165,230,.25);--sky:#7fa8ff;--space:#070b1a;--glow:#9cc2ff;--r:14px}
+/* ===== Theme tokens: "dark" = space (default), "gold" = cream with falling golden stars ===== */
+:root{
+  --space:#070b1a;--r:14px;--page:#070b1a;
+  --text:#e6ecfb;--head:#fff;--lead:#b9c5e6;--soft:#cfd9f5;--foot:#8d9bc4;
+  --ink:#e6ecfb;--muted:#aab6d8;
+  --card:rgba(12,18,42,.55);--line:rgba(140,165,230,.25);
+  --sky:#7fa8ff;--glow:#9cc2ff;--accent:#8db4f0;--accent2:#8db4f0;--lk:#9cc2ff;
+  --chip-bg:rgba(141,180,240,.14);--chip-fg:#cfe0ff;--chip-sk-bg:rgba(143,211,176,.16);--chip-sk-fg:#a6e8c6;
+  --badge-bg:rgba(74,222,128,.15);--badge-fg:#6ee7a0;
+  --vis-bg:rgba(255,255,255,.05);--dh-bg:rgba(141,180,240,.10);
+  --nav-bg:rgba(7,11,26,.82);--tagline:#3b4a7a;--thover:rgba(255,255,255,.1);
+  --btn-line:#fff;--btn-fg:#fff;--btn-main-bg:#fff;--btn-main-fg:#070b1a;
+  --pill-bg:rgba(12,18,42,.5);--pd-a:#8db4f0;--pd-t:#9cc2ff;--ps-a:#8fd3b0;--ps-t:#8fd3b0;--pall:#cfd9f5;--pill-on-fg:#070b1a;--pall-on:#070b1a;
+  --shadow:0 20px 44px -22px rgba(0,0,0,.6);
+  --hshadow:0 30px 56px -20px rgba(47,111,237,.35),0 8px 20px rgba(0,0,0,.4);--hborder:rgba(156,194,255,.5);
+}
+:root[data-theme="gold"]{
+  --page:#e4e2dc;
+  --text:#2a2f45;--head:#14213d;--lead:#4a5470;--soft:#34405f;--foot:#6b6a60;
+  --ink:#1f2a44;--muted:#4f5a78;
+  --card:rgba(255,255,255,.6);--line:rgba(130,110,60,.28);
+  --sky:#2f5fd0;--glow:#8a5a00;--accent:#8f6410;--accent2:#c9a24a;--lk:#7a5200;
+  --chip-bg:rgba(201,162,74,.18);--chip-fg:#5c4208;--chip-sk-bg:rgba(43,122,85,.12);--chip-sk-fg:#1f6b49;
+  --badge-bg:rgba(21,115,71,.12);--badge-fg:#157347;
+  --vis-bg:rgba(255,255,255,.55);--dh-bg:rgba(201,162,74,.16);
+  --nav-bg:rgba(250,248,242,.8);--tagline:rgba(20,33,61,.3);--thover:rgba(20,33,61,.08);
+  --btn-line:#14213d;--btn-fg:#14213d;--btn-main-bg:#14213d;--btn-main-fg:#fff;
+  --pill-bg:rgba(255,255,255,.6);--pd-a:#c9a24a;--pd-t:#7a5200;--ps-a:#7cc3a0;--ps-t:#1f6b49;--pall:#14213d;--pill-on-fg:#14213d;--pall-on:#fff;
+  --shadow:0 20px 44px -24px rgba(90,70,20,.4);
+  --hshadow:0 30px 56px -22px rgba(150,110,20,.35),0 8px 20px rgba(90,70,20,.15);--hborder:rgba(201,162,74,.7);
+}
 *{box-sizing:border-box;margin:0}
-html{scroll-behavior:smooth;scroll-padding-top:110px;background:var(--space)}
-body{font:17px/1.65 "IBM Plex Sans",system-ui,sans-serif;color:#e6ecfb}
+html{scroll-behavior:smooth;scroll-padding-top:110px;background:var(--page)}
+body{font:17px/1.65 "IBM Plex Sans",system-ui,sans-serif;color:var(--text)}
 h1,h2,h3,h4{font-family:"Space Grotesk",system-ui,sans-serif;line-height:1.15}
 a{color:var(--sky)}
 :focus-visible{outline:3px solid var(--sky);outline-offset:3px}
 .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
-nav{position:fixed;inset:0 0 auto;z-index:100;display:flex;justify-content:space-between;align-items:center;padding:14px 24px;background:rgba(7,11,26,.82);backdrop-filter:blur(10px);color:#fff}
-nav b{font-family:"Space Grotesk";font-size:18px}
-nav div a{color:#cfd9f5;text-decoration:none;margin-left:20px;font-size:15px}
-nav div a:hover{color:#fff}
-.hero{position:relative;min-height:100svh;color:#fff;display:flex;align-items:center;overflow:hidden}
+
+/* nav + theme toggle */
+nav{position:fixed;inset:0 0 auto;z-index:100;display:flex;align-items:center;gap:16px;padding:14px 24px;background:var(--nav-bg);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);color:var(--head)}
+nav b{font-family:"Space Grotesk";font-size:18px;margin-right:auto}
+nav div a{color:var(--soft);text-decoration:none;margin-left:20px;font-size:15px}
+nav div a:hover{color:var(--head)}
+.theme{display:inline-flex;align-items:center;gap:8px;font:600 13px "IBM Plex Sans",sans-serif;padding:7px 14px;border-radius:999px;border:1.5px solid var(--tagline);background:transparent;color:var(--head);cursor:pointer;white-space:nowrap}
+.theme:hover{background:var(--thover)}
+.theme .ti{font-size:15px;line-height:1}
+
+.hero{position:relative;min-height:100svh;color:var(--head);display:flex;align-items:center;overflow:hidden}
 #sky{position:fixed;inset:0;width:100%;height:100%;z-index:-1}
 .hero .wrap{position:relative;padding-top:90px;padding-bottom:70px}
 .hero p.hi{color:var(--glow);margin-bottom:14px;font-weight:500}
 .hero h1{font-size:clamp(36px,6.5vw,72px);max-width:17ch;letter-spacing:-.02em}
-.hero p.sub{max-width:58ch;margin:22px 0 32px;color:#cfd9f5;font-size:19px}
+.hero p.sub{max-width:58ch;margin:22px 0 32px;color:var(--soft);font-size:19px}
 .hero p.sub a{color:var(--glow);font-weight:600}
-.btn{display:inline-block;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:600;margin:0 10px 10px 0;border:1.5px solid #fff;color:#fff;transition:transform .2s}
-.btn.main{background:#fff;color:var(--space)}
+.btn{display:inline-block;padding:12px 24px;border-radius:999px;text-decoration:none;font-weight:600;margin:0 10px 10px 0;border:1.5px solid var(--btn-line);color:var(--btn-fg);transition:transform .2s}
+.btn.main{background:var(--btn-main-bg);color:var(--btn-main-fg)}
 .btn:hover{transform:translateY(-2px)}
-.tag{display:inline-block;margin-top:24px;padding:6px 16px;border:1px solid #3b4a7a;border-radius:999px;color:#cfd9f5;font-size:14px}
+.tag{display:inline-block;margin-top:24px;padding:6px 16px;border:1px solid var(--tagline);border-radius:999px;color:var(--soft);font-size:14px}
 .dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#4ade80;margin-right:8px}
 section{padding:88px 0}
-section>.wrap>h2{font-size:clamp(28px,4vw,44px);margin-bottom:12px;color:#fff}
-.lead{color:#b9c5e6;max-width:62ch;margin-bottom:34px}
+section>.wrap>h2{font-size:clamp(28px,4vw,44px);margin-bottom:12px;color:var(--head)}
+.lead{color:var(--lead);max-width:62ch;margin-bottom:34px}
 
-/* ===== Dark, see-through (glass) cards ===== */
+/* ===== Glass cards (dark and see-through in space mode, light frosted in golden mode) ===== */
 .job,.pc,.cc,.card{
   background:var(--card);
   border:1px solid var(--line);
   -webkit-backdrop-filter:blur(14px) saturate(120%);
   backdrop-filter:blur(14px) saturate(120%);
-  box-shadow:0 20px 44px -22px rgba(0,0,0,.6);
+  box-shadow:var(--shadow);
 }
-.job h3,.pc h4,.cc h4,.card h3{color:#fff}
+.job h3,.pc h4,.cc h4,.card h3{color:var(--head)}
 
 /* chips */
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
-.chips span{font-size:12px;padding:3px 11px;border-radius:999px;background:rgba(141,180,240,.14);color:#cfe0ff;font-weight:500}
+.chips span{font-size:12px;padding:3px 11px;border-radius:999px;background:var(--chip-bg);color:var(--chip-fg);font-weight:500}
 
 /* about */
-.about{display:grid;gap:40px;grid-template-columns:1.3fr 1fr;align-items:start}
-.about aside{background:var(--card);border:1px solid var(--line);color:#cfd9f5;border-radius:var(--r);padding:26px;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
-.about aside h3{color:#fff;margin-bottom:10px}
+.about{display:grid;gap:40px;grid-template-columns:1.3fr 1fr;align-items:stretch}
+.about aside{background:var(--card);border:1px solid var(--line);color:var(--soft);border-radius:var(--r);padding:26px;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+.about aside h3{color:var(--head);margin-bottom:10px}
 .about aside li{margin:8px 0 8px 18px}
+.about-text{display:flex;flex-direction:column;justify-content:space-between;gap:26px}
+.about-text .lead{margin-bottom:0;font-size:19px}
+.grp{font:600 12px/1 "IBM Plex Sans",sans-serif;text-transform:uppercase;letter-spacing:.08em;color:var(--accent);margin-bottom:14px}
+.pt{padding-left:16px;border-left:3px solid var(--accent2);margin-bottom:16px}
+.pt:last-child{margin-bottom:0}
+.pt strong{display:block;color:var(--head);font:700 19px "Space Grotesk",sans-serif;margin-bottom:3px}
+.pt p{color:var(--lead);font-size:16px}
 .ph{overflow:hidden;border-radius:var(--r);background:#dfe6f5;margin-bottom:22px}
 .ph img{width:100%;height:auto;display:block}
-.ph.contact{width:140px;aspect-ratio:1;border-radius:50%;margin:0 auto 24px;border:3px solid #3b4a7a}
+.ph.contact{width:140px;aspect-ratio:1;border-radius:50%;margin:0 auto 24px;border:3px solid var(--tagline)}
 .ph.contact img{height:100%;object-fit:cover}
 
 /* experience + education */
@@ -72,7 +119,7 @@ section>.wrap>h2{font-size:clamp(28px,4vw,44px);margin-bottom:12px;color:#fff}
 .logo img{position:relative;display:block;width:100%;height:100%;object-fit:contain}
 .job h3{font-size:21px}
 .sub2{color:var(--muted);font-size:14px;margin:2px 0 10px}
-.badge{display:inline-block;margin-left:8px;font:600 11px "IBM Plex Sans";padding:2px 10px;border-radius:999px;background:rgba(74,222,128,.15);color:#6ee7a0;vertical-align:middle}
+.badge{display:inline-block;margin-left:8px;font:600 11px "IBM Plex Sans";padding:2px 10px;border-radius:999px;background:var(--badge-bg);color:var(--badge-fg);vertical-align:middle}
 .stats{display:flex;flex-wrap:wrap;gap:28px;margin:12px 0}
 .stats b{display:block;font:700 30px "Space Grotesk";color:var(--sky);line-height:1}
 .stats span{font-size:13px;color:var(--muted)}
@@ -83,22 +130,22 @@ section>.wrap>h2{font-size:clamp(28px,4vw,44px);margin-bottom:12px;color:#fff}
 /* projects by domain */
 [hidden]{display:none!important}
 .filters{margin-bottom:6px}.frow{display:flex;gap:12px;align-items:flex-start;margin:10px 0}
-.frow>b{min-width:64px;padding-top:7px;font-size:12px;color:#b9c5e6;text-transform:uppercase;letter-spacing:.06em}
+.frow>b{min-width:64px;padding-top:7px;font-size:12px;color:var(--lead);text-transform:uppercase;letter-spacing:.06em}
 .frow>div{display:flex;flex-wrap:wrap;gap:8px}
-.pill{font:600 14px "IBM Plex Sans",sans-serif;padding:6px 14px;border-radius:999px;border:1.5px solid var(--a);color:var(--t,var(--a));background:rgba(12,18,42,.5);cursor:pointer;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
-.pill[data-k=d]:not([data-id=all]){--a:#8db4f0;--t:#9cc2ff}
-.pill[data-k=s]:not([data-id=all]){--a:#8fd3b0;--t:#8fd3b0}
-.pill[data-id=all]{--a:#cfd9f5 !important;--t:#cfd9f5}
-.lk{color:#9cc2ff;font-weight:600;font-size:14px;text-decoration:none;margin-top:14px}
-.chips span.x.sk{background:rgba(143,211,176,.16);color:#a6e8c6}
+.pill{font:600 14px "IBM Plex Sans",sans-serif;padding:6px 14px;border-radius:999px;border:1.5px solid var(--a);color:var(--t,var(--a));background:var(--pill-bg);cursor:pointer;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.pill[data-k=d]:not([data-id=all]){--a:var(--pd-a);--t:var(--pd-t)}
+.pill[data-k=s]:not([data-id=all]){--a:var(--ps-a);--t:var(--ps-t)}
+.pill[data-id=all]{--a:var(--pall) !important;--t:var(--pall)}
+.lk{color:var(--lk);font-weight:600;font-size:14px;text-decoration:none;margin-top:14px}
+.chips span.x.sk{background:var(--chip-sk-bg);color:var(--chip-sk-fg)}
 .pill:hover:not(:disabled){background:color-mix(in srgb,var(--a) 22%,transparent)}
-.pill.on{background:var(--a);color:#070b1a}
-.pill[data-k]:not([data-id=all]).on,.pill[data-id=all].on{color:#070b1a}
-.pill:disabled{opacity:.35;cursor:not-allowed}#fcount{font-size:14px;color:#b9c5e6}.sk{font-weight:600}
+.pill.on{background:var(--a);color:var(--pill-on-fg)}
+.pill[data-id=all].on{color:var(--pall-on)}
+.pill:disabled{opacity:.35;cursor:not-allowed}#fcount{font-size:14px;color:var(--lead)}.sk{font-weight:600}
 .dom{--a:#2f6fed;margin-top:46px}
-.dh{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:var(--r);background:rgba(141,180,240,.10);border-left:4px solid #8db4f0;margin-bottom:20px}
-.dh .ic{font-size:30px}.dh h3{font-size:24px;color:#fff}.dh p{font-size:14px;color:var(--muted)}
-.vis{display:flex;align-items:center;justify-content:center;min-height:300px;padding:14px;border-radius:var(--r);overflow:hidden;background:rgba(255,255,255,.05);border:1px solid var(--line)}
+.dh{display:flex;align-items:center;gap:14px;padding:14px 18px;border-radius:var(--r);background:var(--dh-bg);border-left:4px solid var(--accent2);margin-bottom:20px}
+.dh .ic{font-size:30px}.dh h3{font-size:24px;color:var(--head)}.dh p{font-size:14px;color:var(--muted)}
+.vis{display:flex;align-items:center;justify-content:center;min-height:300px;padding:14px;border-radius:var(--r);overflow:hidden;background:var(--vis-bg);border:1px solid var(--line)}
 .vis img{display:block;width:100%;height:auto;border-radius:8px}
 .beyond{display:grid;grid-template-columns:minmax(260px,380px) 1fr;gap:22px;align-items:stretch}
 .beyond.nophoto{grid-template-columns:1fr}.beyond .ph{margin:0;align-self:start}
@@ -109,40 +156,32 @@ section>.wrap>h2{font-size:clamp(28px,4vw,44px);margin-bottom:12px;color:#fff}
 .pc{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch;color:var(--ink);border-radius:20px;padding:24px;margin-bottom:28px;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
 .pc.rev .vis{order:2}
 .bd{display:flex;flex-direction:column;justify-content:center}
-.meta{font-size:12px;font-weight:700;color:#8db4f0;text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px}
+.meta{font-size:12px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px}
 .bd h4{font-size:clamp(21px,2vw,27px);margin-bottom:10px}
 .d{color:var(--muted);font-size:16px;margin-bottom:12px}
 .bd ul{margin:0 0 4px 20px;color:var(--muted);font-size:15px}.bd li{margin:5px 0}
-.chips span.x{background:rgba(141,180,240,.14);color:#cfe0ff}
+.chips span.x{background:var(--chip-bg);color:var(--chip-fg)}
 .grid{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
 .cc{display:flex;flex-direction:column;color:var(--ink);border-radius:18px;overflow:hidden;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
-.pc:hover,.cc:hover{transform:translateY(-6px);border-color:rgba(156,194,255,.5);box-shadow:0 30px 56px -20px rgba(47,111,237,.35),0 8px 20px rgba(0,0,0,.4)}
+.pc:hover,.cc:hover{transform:translateY(-6px);border-color:var(--hborder);box-shadow:var(--hshadow)}
 @media(prefers-reduced-motion:reduce){.pc:hover,.cc:hover{transform:none}}
 .cc .vis{min-height:170px;border-radius:0;border:0;box-shadow:none}
 .cc .bd{padding:20px;justify-content:flex-start;flex:1}
 .cc h4{font-size:19px}.cc .d{font-size:15px}
-.cta{color:#fff;text-align:center}
-.cta h2{margin-bottom:14px}.cta p{color:#cfd9f5;max-width:52ch;margin:0 auto 28px}
+.cta{color:var(--head);text-align:center}
+.cta h2{margin-bottom:14px}.cta p{color:var(--soft);max-width:52ch;margin:0 auto 28px}
 .card{color:var(--ink);border-radius:var(--r);padding:24px}
 .card h3{font-size:20px;margin-bottom:6px}.card p{color:var(--muted);font-size:15px}
 .grid3{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
-footer{color:#8d9bc4;text-align:center;padding:0 0 36px;font-size:14px}
+footer{color:var(--foot);text-align:center;padding:0 0 36px;font-size:14px}
 @media(max-width:880px){.about,.pc,.edu{grid-template-columns:1fr}.pc.rev .vis{order:0}.job{grid-template-columns:1fr}nav div a:not(:last-child){display:none}section{padding:64px 0}}
+@media(max-width:480px){.theme .tl{display:none}.theme{padding:7px 11px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
-.about{align-items:stretch}
-.about-text{display:flex;flex-direction:column;justify-content:space-between;gap:26px}
-.about-text .lead{margin-bottom:0;font-size:19px}
-.grp{font:600 12px/1 "IBM Plex Sans",sans-serif;text-transform:uppercase;letter-spacing:.08em;color:#8db4f0;margin-bottom:14px}
-.pt{padding-left:16px;border-left:3px solid #8db4f0;margin-bottom:16px}
-.pt:last-child{margin-bottom:0}
-.pt strong{display:block;color:#fff;font:700 19px "Space Grotesk",sans-serif;margin-bottom:3px}
-.pt p{color:#b9c5e6;font-size:16px}
-
 </style>
 </head>
 <body>
 <canvas id="sky" aria-hidden="true"></canvas>
-<nav aria-label="Main"><b>Aikya Sira Kumar</b><div><a href="#about">About</a><a href="#experience">Experience</a><a href="#education">Education</a><a href="#work">Projects</a><a href="#contact">Contact</a></div></nav>
+<nav aria-label="Main"><b>Aikya Sira Kumar</b><div><a href="#about">About</a><a href="#education">Education</a><a href="#experience">Experience</a><a href="#work">Projects</a><a href="#contact">Contact</a></div><button type="button" class="theme" id="theme"><span class="ti" aria-hidden="true">✨</span><span class="tl">Golden sky</span></button></nav>
 
 <header class="hero" id="top">
 <div class="wrap">
@@ -160,14 +199,14 @@ footer{color:#8d9bc4;text-align:center;padding:0 0 36px;font-size:14px}
 <div class="about">
 <div class="about-text">
 <p class="lead">I like problems where data has a shape: flight networks, orbits, molecules.</p>
- 
+
 <div class="pgroup">
 <h3 class="grp">What I bring to a team</h3>
 <div class="pt"><strong>I ship, not just prototype.</strong><p>At Lufthansa Group I replaced manual quarterly batch jobs with a governed Azure ML pipeline, complete with automated deployment gates and GDPR-compliant data handling.</p></div>
 <div class="pt"><strong>I go deep when it matters.</strong><p>My master thesis trained an inductive GraphSAGE model on airline schedule and ticketing data that forecasts demand even for airports it never saw in training.</p></div>
 <div class="pt"><strong>I translate.</strong><p>I presented my thesis results to Lufthansa’s network planning team, and I explain models to planners and non-technical colleagues so results turn into decisions.</p></div>
 </div>
- 
+
 <div class="pgroup">
 <h3 class="grp">How I work</h3>
 <div class="pt"><strong>I start with the decision, not the model.</strong><p>The first question is what someone needs to do differently. For the airline network, that led to node-removal simulations that show which hubs are critical and where to reroute.</p></div>
@@ -175,7 +214,7 @@ footer{color:#8d9bc4;text-align:center;padding:0 0 36px;font-size:14px}
 <div class="pt"><strong>I leave things runnable.</strong><p>Every project ends with documentation the next person can use: a handoff guide for the internship pipeline, a model card and risk register for the audit.</p></div>
 </div>
 </div>
- 
+
 <aside><div class="ph"><img src="assets/about.jpeg" alt="Aikya Sira Kumar" onerror="this.parentNode.remove()"></div><h3>Quick facts</h3><ul>
 <li>M.Sc. Applied Data Science and Analytics, SRH University Heidelberg (2026)</li>
 <li>Thesis and internship, Lufthansa Group (2026)</li>
@@ -185,16 +224,16 @@ footer{color:#8d9bc4;text-align:center;padding:0 0 36px;font-size:14px}
 </div>
 </div></section>
 
+<section id="education"><div class="wrap">
+<h2>Academic depth, industry practice</h2>
+<p class="lead">M.Sc. in Applied Data Science and Analytics, with a thesis on graph neural networks for airline networks.</p>
+<div class="edu" id="edu"></div>
+</div></section>
+
 <section id="experience"><div class="wrap">
 <h2>Three years. One trajectory.</h2>
 <p class="lead">From keeping pipelines at 99.9% availability to shipping governed ML at airline scale.</p>
 <div class="cards" id="exp"></div>
-</div></section>
-
-<section id="education"><div class="wrap">
-<h2>Engineering, then data science.</h2>
-<p class="lead">&nbsp;</p>
-<div class="edu" id="edu"></div>
 </div></section>
 
 <section id="work" style="padding-top:60px"><div class="wrap">
@@ -237,8 +276,8 @@ var EXP=[
 {logo:'logo-capgemini.png',e:'CG',role:'Data Analyst',org:'Capgemini · Hyderabad',date:'Sep 2022 – Apr 2023',hl:['Started on the same monitoring and data quality team before the promotion'],ch:['Python','SQL']}
 ];
 var EDU=[
-{logo:'logo-srh.png',e:'SRH',role:'M.Sc. Applied Data Science and Analytics',org:'SRH University Heidelberg',date:'Oct 2024 – Sep 2026',badge:'Graduated',hl:['Advanced machine learning, graph analytics, distributed systems and cloud infrastructure','Thesis with Lufthansa Group on GNNs for airline networks']},
-{logo:'logo-ssit.png',e:'SSIT',role:'B.E. Telecommunications Engineering',org:'Sri Siddhartha Institute of Technology, Tumkur',date:'Aug 2018 – Jul 2022',hl:['Top 6 of class, 8.6/10 CGPA','Final-year work on IoT-enabled environmental monitoring']}
+{logo:'logo-srh.png',e:'SRH',role:'M.Sc. Applied Data Science and Analytics',org:'SRH University Heidelberg',date:'Oct 2024 – Sep 2026 · Grade: 1.7',badge:'Graduated',hl:['Advanced machine learning, graph analytics, distributed systems and cloud infrastructure','Thesis with Lufthansa Group on GNNs for airline networks']},
+{logo:'logo-ssit.png',e:'SSIT',role:'B.E. Telecommunications Engineering',org:'Sri Siddhartha Institute of Technology, Tumkur',date:'Aug 2018 – Jul 2022',hl:['8.6/10 CGPA','Final-year work on IoT-enabled environmental monitoring']}
 ];
 var DOM=[
 {id:'air',n:'Airlines &amp; Aviation',e:'✈️',a:'#2f6fed',t:'Networks, demand and passengers',p:[
@@ -294,19 +333,68 @@ document.querySelector('.filters').addEventListener('click',function(e){var b=e.
 if(d)fd=(fd==id?'all':id);else fs=(fs==id?'all':id);apply()});
 apply();
 
+/* ===== Animated background + theme toggle =====
+   "dark": starfield with shooting stars (as before).
+   "gold": cream bokeh backdrop with golden sparkles falling down. */
 (function(){
-var c=$('sky'),x=c.getContext('2d'),W,H,stars=[],shots=[],t=0,reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
-var ap=[[8.6,50],[78.4,17.2],[104,1.4],[-73.8,40.6],[-46.5,-23.4],[55.4,25.2],[139.7,35.7],[151.2,-33.9],[28,-26.1],[-118.4,33.9],[-0.5,51.5]],
-routes=[[0,1],[0,3],[0,5],[5,2],[0,4],[1,2],[0,6],[2,7],[0,8],[9,6],[10,3],[5,8]];
-function size(){W=c.width=c.offsetWidth;H=c.height=c.offsetHeight;stars=[];for(var i=0;i<Math.round(W*H/2400);i++){var z=Math.random();stars.push({x:Math.random()*W,y:Math.random()*H,r:z*1.5+.2,v:z*1.1+.2,p:Math.random()*6})}}
-function pt(a){return[(a[0]+180)/360*W,(90-a[1])/180*H*.9+H*.05]}
-function draw(){x.clearRect(0,0,W,H);
-stars.forEach(function(s){if(!reduce){s.x-=s.v;if(s.x<0){s.x=W;s.y=Math.random()*H}}x.globalAlpha=reduce?.7:.3+.7*Math.abs(Math.sin(t/22+s.p));x.fillStyle='#fff';x.beginPath();x.arc(s.x,s.y,s.r,0,7);x.fill()});
+var root=document.documentElement,c=$('sky'),x=c.getContext('2d'),btn=$('theme'),
+W,H,dpr=1,t=0,mode=root.getAttribute('data-theme')==='gold'?'gold':'dark',
+reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,
+stars=[],shots=[],bg=null;
+
+/* four-pointed sparkle path */
+function starPath(g,cx,cy,L){g.beginPath();g.moveTo(cx,cy-L);g.quadraticCurveTo(cx,cy,cx+L,cy);g.quadraticCurveTo(cx,cy,cx,cy+L);g.quadraticCurveTo(cx,cy,cx-L,cy);g.quadraticCurveTo(cx,cy,cx,cy-L);g.closePath()}
+
+function soft(g,cx,cy,r,rgb,a){var q=g.createRadialGradient(cx,cy,0,cx,cy,r);q.addColorStop(0,'rgba('+rgb+','+a+')');q.addColorStop(1,'rgba('+rgb+',0)');g.fillStyle=q;g.beginPath();g.arc(cx,cy,r,0,7);g.fill()}
+
+/* static creamy bokeh layer, painted once per resize */
+function buildBg(){
+bg=document.createElement('canvas');bg.width=c.width;bg.height=c.height;
+var b=bg.getContext('2d');b.scale(dpr,dpr);
+var g=b.createLinearGradient(0,0,W,H);g.addColorStop(0,'#dcdcdc');g.addColorStop(.5,'#e3e1dc');g.addColorStop(1,'#dedee0');
+b.fillStyle=g;b.fillRect(0,0,W,H);
+var m=Math.max(W,H);
+soft(b,W*.08,H*.85,m*.62,'255,250,236',.95);
+soft(b,W*.92,H*.06,m*.42,'255,250,238',.85);
+soft(b,W*.35,H*.5,m*.34,'255,248,230',.5);
+var i,n=Math.round(W*H/20000);
+for(i=0;i<n;i++){soft(b,W*Math.pow(Math.random(),1.3),Math.random()*H,Math.random()*28+6,'255,250,232',Math.random()*.16+.06)}
+n=Math.min(900,Math.round(W*H/2600));
+for(i=0;i<n;i++){b.fillStyle='rgba(255,244,205,'+(Math.random()*.6+.25)+')';b.beginPath();b.arc(W*Math.pow(Math.random(),1.5),Math.random()*H,Math.random()*1.2+.4,0,7);b.fill()}
+}
+
+function size(){
+dpr=Math.min(window.devicePixelRatio||1,2);W=c.offsetWidth;H=c.offsetHeight;
+c.width=Math.round(W*dpr);c.height=Math.round(H*dpr);x.setTransform(dpr,0,0,dpr,0,0);
+stars=[];for(var i=0;i<Math.round(W*H/2400);i++){var z=Math.random();stars.push({x:Math.random()*W,y:Math.random()*H,r:z*1.5+.2,v:z*1.1+.2,p:Math.random()*6})}
+shots=[];buildBg();
+}
+
+/* same motion in both themes: twinkling dots drifting left + shooting stars.
+   space = white on night sky, gold = golden on the cream backdrop */
+function drawSky(gold){
+x.globalAlpha=1;
+if(gold)x.drawImage(bg,0,0,W,H);else x.clearRect(0,0,W,H);
+var dot=gold?'#c98f1f':'#fff',streak=gold?'#c98f1f':'#fff';
+stars.forEach(function(s){if(!reduce){s.x-=s.v;if(s.x<0){s.x=W;s.y=Math.random()*H}}x.globalAlpha=reduce?.7:.3+.7*Math.abs(Math.sin(t/22+s.p));x.fillStyle=dot;x.beginPath();x.arc(s.x,s.y,s.r,0,7);x.fill()});
 x.globalAlpha=1;
 if(!reduce){if(Math.random()<.02)shots.push({x:Math.random()*W,y:Math.random()*H*.6,l:0});
-shots=shots.filter(function(s){s.x-=11;s.y+=4;s.l++;x.globalAlpha=1-s.l/40;x.strokeStyle='#fff';x.lineWidth=1.5;x.beginPath();x.moveTo(s.x,s.y);x.lineTo(s.x+60,s.y-22);x.stroke();x.globalAlpha=1;return s.l<40})}
-t++;if(!reduce)requestAnimationFrame(draw)}
-size();draw();addEventListener('resize',function(){size();if(reduce)draw()});
+shots=shots.filter(function(s){s.x-=11;s.y+=4;s.l++;x.globalAlpha=1-s.l/40;x.strokeStyle=streak;x.lineWidth=1.5;x.beginPath();x.moveTo(s.x,s.y);x.lineTo(s.x+60,s.y-22);x.stroke();x.globalAlpha=1;return s.l<40})}
+}
+
+function render(){drawSky(mode==='gold')}
+function frame(){render();t++;if(!reduce)requestAnimationFrame(frame)}
+
+function label(){
+var g=mode==='gold';
+btn.innerHTML='<span class="ti" aria-hidden="true">'+(g?'🌌':'✨')+'</span><span class="tl">'+(g?'Night sky':'Golden sky')+'</span>';
+btn.setAttribute('aria-label',g?'Switch to the night sky background':'Switch to the golden sky background');
+}
+function setMode(m){mode=m;root.setAttribute('data-theme',m);try{localStorage.setItem('theme',m)}catch(e){}label();if(reduce)render()}
+btn.addEventListener('click',function(){setMode(mode==='gold'?'dark':'gold')});
+
+size();label();frame();
+addEventListener('resize',function(){size();if(reduce)render()});
 })();
 </script>
 </body>
