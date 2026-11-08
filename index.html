@@ -81,14 +81,14 @@ section>.wrap>h2{font-size:clamp(28px,4vw,44px);margin-bottom:12px;color:var(--h
 .lead{color:var(--lead);max-width:62ch;margin-bottom:34px}
 
 /* ===== Glass cards (dark and see-through in space mode, light frosted in golden mode) ===== */
-.job,.pc,.cc,.card{
+.job,.pc,.cc,.card,.tl-item{
   background:var(--card);
   border:1px solid var(--line);
   -webkit-backdrop-filter:blur(14px) saturate(120%);
   backdrop-filter:blur(14px) saturate(120%);
   box-shadow:var(--shadow);
 }
-.job h3,.pc h4,.cc h4,.card h3{color:var(--head)}
+.job h3,.pc h4,.cc h4,.card h3,.tl-item h4{color:var(--head)}
 
 /* chips */
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
@@ -153,6 +153,23 @@ section>.wrap>h2{font-size:clamp(28px,4vw,44px);margin-bottom:12px;color:var(--h
 .bcards .card{flex:1;display:flex;gap:18px;align-items:center}
 .bcards .card h3{font-size:22px}.bcards .card p{font-size:16px}.bic{font-size:38px;line-height:1}
 @media(max-width:880px){.beyond{grid-template-columns:1fr}}
+/* career timeline */
+.tl{position:relative;display:flex;flex-direction:column;gap:38px;padding-left:56px}
+.tl::before{content:"";position:absolute;left:23px;top:6px;bottom:6px;width:2px;border-radius:2px;background:var(--accent2);opacity:.5}
+.tl-co{position:relative}
+.tl-head{position:relative;min-height:48px;display:flex;flex-direction:column;justify-content:center;margin-bottom:14px}
+.tl-head h3{font-size:22px;color:var(--head)}
+.tl-head .logo{position:absolute;left:-56px;top:0;width:48px;height:48px;padding:6px;border-radius:12px}
+.tl-head .logo span{font-size:12px}
+.tl-item{position:relative;color:var(--ink);border-radius:var(--r);padding:16px 20px;margin-top:12px}
+.tl-item::before{content:"";position:absolute;left:-38px;top:24px;width:12px;height:12px;border-radius:50%;background:var(--accent2);box-shadow:0 0 0 4px var(--page)}
+.tl-item h4{font-size:19px}
+.tl-item .when{color:var(--muted);font-size:13px;margin-top:2px}
+.tl-item .tx{color:var(--muted);font-size:15px;margin-top:8px}
+.tl-item .see{display:inline-block;margin-top:10px}
+.pc:target{border-color:var(--hborder);box-shadow:var(--hshadow)}
+@media(max-width:880px){.tl{padding-left:46px}.tl::before{left:18px}.tl-head .logo{left:-46px;width:40px;height:40px}.tl-item::before{left:-32px}}
+
 .pc{display:grid;grid-template-columns:1fr 1fr;gap:30px;align-items:stretch;color:var(--ink);border-radius:20px;padding:24px;margin-bottom:28px;transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease}
 .pc.rev .vis{order:2}
 .bd{display:flex;flex-direction:column;justify-content:center}
@@ -181,7 +198,7 @@ footer{color:var(--foot);text-align:center;padding:0 0 36px;font-size:14px}
 </head>
 <body>
 <canvas id="sky" aria-hidden="true"></canvas>
-<nav aria-label="Main"><b>Aikya Sira Kumar</b><div><a href="#about">About</a><a href="#education">Education</a><a href="#experience">Experience</a><a href="#work">Projects</a><a href="#contact">Contact</a></div><button type="button" class="theme" id="theme"><span class="ti" aria-hidden="true">✨</span><span class="tl">Golden sky</span></button></nav>
+<nav aria-label="Main"><b>Aikya Sira Kumar</b><div><a href="#about">About</a><a href="#education">Education</a><a href="#experience">Career</a><a href="#work">Projects</a><a href="#contact">Contact</a></div><button type="button" class="theme" id="theme"><span class="ti" aria-hidden="true">✨</span><span class="tl">Golden sky</span></button></nav>
 
 <header class="hero" id="top">
 <div class="wrap">
@@ -231,9 +248,9 @@ footer{color:var(--foot);text-align:center;padding:0 0 36px;font-size:14px}
 </div></section>
 
 <section id="experience"><div class="wrap">
-<h2>Three years. One trajectory.</h2>
-<p class="lead">From keeping pipelines at 99.9% availability to shipping governed ML at airline scale.</p>
-<div class="cards" id="exp"></div>
+<h2>From data analyst to data scientist</h2>
+<p class="lead">Promoted to Senior Data Analyst at Capgemini, then moved into machine learning at Lufthansa Group.</p>
+<div class="tl" id="exp"></div>
 </div></section>
 
 <section id="work" style="padding-top:60px"><div class="wrap">
@@ -270,19 +287,21 @@ footer{color:var(--foot);text-align:center;padding:0 0 36px;font-size:14px}
 /* ===== EDIT YOUR CONTENT HERE. Images go in assets/ (img / logo fields). ===== */
 var GH='https://github.com/AikyaKumar';
 var EXP=[
-{logo:'logo-lufthansa.png',e:'LH',role:'Data Science Intern',org:'Lufthansa Group · Frankfurt',date:'Jan 2026 – Sep 2026',stats:[['~300M','booking records'],['~30%','faster runtime'],['up to 60%','lower compute cost']],hl:['Built Azure ML MLOps pipelines replacing legacy ADF batch workflows','Processed records via Databricks Delta Tables and Unity Catalog without data leakage','Benchmarked XGBoost, FLAML AutoML and Random Forest with automated deployment gates'],ch:['Azure ML','Databricks','XGBoost','Delta Lake','ADF']},
-{logo:'logo-lufthansa.png',e:'LH',role:'Master Thesis Researcher',org:'Lufthansa Group · Frankfurt &amp; Heidelberg',date:'Apr 2026 – Sep 2026',stats:[['0.846','R² on unseen season']],hl:['Built inductive GraphSAGE models in PyTorch Geometric on IATA DDS ticketing and OAG schedule data','Found structurally critical hub airports with node-removal simulations'],ch:['PyTorch Geometric','PySpark','NetworkX','GraphSAGE']},
-{logo:'logo-capgemini.png',e:'CG',role:'Senior Data Analyst',badge:'Promoted',org:'Capgemini · Hyderabad',date:'Apr 2023 – Sep 2024',stats:[['3,000+','locations monitored'],['99.9%','availability supported']],hl:['Maintained automated KPI monitoring and validation workflows','Built ELT and data validation pipelines in Python and SQL, cutting manual debugging'],ch:['Python','SQL','KPI monitoring','ELT']},
-{logo:'logo-capgemini.png',e:'CG',role:'Data Analyst',org:'Capgemini · Hyderabad',date:'Sep 2022 – Apr 2023',hl:['Started on the same monitoring and data quality team before the promotion'],ch:['Python','SQL']}
+{logo:'logo-lufthansa.png',e:'LH',org:'Lufthansa Group',loc:'Frankfurt',date:'Jan 2026 – Sep 2026',roles:[
+ {role:'Data Science Intern',date:'Jan 2026 – Sep 2026',txt:'Moved ML pipelines to governed Azure ML at airline scale.',go:['See project','#p-acs']},
+ {role:'Master Thesis Researcher',date:'Apr 2026 – Sep 2026',txt:'Graph neural networks for demand forecasting, with the network planning team.',go:['See project','#p-thesis']}]},
+{logo:'logo-capgemini.png',e:'CG',org:'Capgemini',loc:'Hyderabad',date:'Sep 2022 – Sep 2024',roles:[
+ {role:'Senior Data Analyst',badge:'Promoted',date:'Apr 2023 – Sep 2024',txt:'Ran automated KPI monitoring across 3,000+ locations at 99.9% availability.'},
+ {role:'Data Analyst',date:'Sep 2022 – Apr 2023',txt:'Joined the data quality team and built ELT and validation pipelines in Python and SQL.'}]}
 ];
 var EDU=[
 {logo:'logo-srh.png',e:'SRH',role:'M.Sc. Applied Data Science and Analytics',org:'SRH University Heidelberg',date:'Oct 2024 – Sep 2026 · Grade: 1.7',badge:'Graduated',hl:['Advanced machine learning, graph analytics, distributed systems and cloud infrastructure','Thesis with Lufthansa Group on GNNs for airline networks']},
-{logo:'logo-ssit.png',e:'SSIT',role:'B.E. Telecommunications Engineering',org:'Sri Siddhartha Institute of Technology, Tumkur',date:'Aug 2018 – Jul 2022',hl:['8.6/10 CGPA','Final-year work on IoT-enabled environmental monitoring']}
+{logo:'logo-ssit.png',e:'SSIT',role:'B.E. Telecommunications Engineering',org:'Sri Siddhartha Institute of Technology, Tumkur',date:'Aug 2018 – Jul 2022 · CGPA: 8.6/10',badge:'Graduated',hl:['Linear algebra, probability, network theory, signal processing and pattern recognition','Final-year IoT environmental monitoring project, graded Outstanding']}
 ];
 var DOM=[
 {id:'air',n:'Airlines &amp; Aviation',e:'✈️',a:'#2f6fed',t:'Networks, demand and passengers',p:[
- {big:1,n:'Airline Network &amp; Passenger Demand Analytics',tag:'Master thesis · Lufthansa Group',d:'Joined global flight schedules with ticketing data into one heterogeneous graph and trained an inductive GraphSAGE model to forecast passenger demand.',hl:['R² of 0.846 on a held-out season, generalising to unseen airports','Edge-aware GraphSAGE in PyTorch Geometric','Node-removal simulations expose critical hubs and suggest reroutes','Presented to Lufthansa’s network planning team'],ch:['PyTorch Geometric','PySpark','GraphSAGE','IATA DDS','NetworkX'],sk:['gnn','ml'],img:'portfolio_thesis.png',l:['Request methodology','#contact']},
- {big:1,n:'Production MLOps &amp; Passenger Segmentation',tag:'Internship · Lufthansa Group',d:'Replaced manual quarterly batch jobs with a governed Azure ML pipeline that classifies corporate vs. leisure travellers across ~300M booking records.',hl:['~30% faster and up to 60% lower compute cost','Databricks, Delta Lake and Unity Catalog at ~300M-record scale','40% relative error reduction vs. baselines','GDPR and AI-policy compliant, handed off with documentation'],ch:['Azure ML','Databricks','XGBoost','FLAML','Unity Catalog'],sk:['mlops','ml'],img:'acs.png',l:['Discuss architecture','#contact']}]},
+ {big:1,id:'p-thesis',n:'Airline Network &amp; Passenger Demand Analytics',tag:'Master thesis · Lufthansa Group',d:'Joined global flight schedules with ticketing data into one heterogeneous graph and trained an inductive GraphSAGE model to forecast passenger demand.',hl:['R² of 0.846 on a held-out season, generalising to unseen airports','Edge-aware GraphSAGE in PyTorch Geometric','Node-removal simulations expose critical hubs and suggest reroutes','Presented to Lufthansa’s network planning team'],ch:['PyTorch Geometric','PySpark','GraphSAGE','IATA DDS','NetworkX'],sk:['gnn','ml'],img:'portfolio_thesis.png',l:['Request methodology','#contact']},
+ {big:1,id:'p-acs',n:'Production MLOps &amp; Passenger Segmentation',tag:'Internship · Lufthansa Group',d:'Replaced manual quarterly batch jobs with a governed Azure ML pipeline that classifies corporate vs. leisure travellers across ~300M booking records.',hl:['~30% faster and up to 60% lower compute cost','Databricks, Delta Lake and Unity Catalog at ~300M-record scale','40% relative error reduction vs. baselines','GDPR and AI-policy compliant, handed off with documentation'],ch:['Azure ML','Databricks','XGBoost','FLAML','Unity Catalog'],sk:['mlops','ml'],img:'acs.png',l:['Discuss architecture','#contact']}]},
 {id:'life',n:'Life Sciences &amp; Pharma',e:'🧬',a:'#12a37f',t:'Agents that read scientific literature',p:[
  {big:1,n:'AI Agents 4 Pharma',tag:'Open source · GenAI',d:'Contributed to a multi-agent framework that reads scientific papers. Added bioRxiv and medRxiv sources and a multimodal pipeline with NVIDIA NeMo Retriever and PaddleOCR.',hl:['Wrote the extraction pipeline from scratch and verified it on 6–8 papers','Text inside tables, charts and infographics extracted and answered via GPT-4o mini','Worked on giving OCR’d numbers the context of what they mean'],ch:['LLM agents','PaddleOCR','NeMo Retriever','GPT-4o mini'],sk:['genai'],img:'pharma_agent.png',l:['GitHub repository','https://github.com/VirtualPatientEngine/AIAgents4Pharma']}]},
 {id:'fin',n:'Finance &amp; Responsible AI',e:'🏦',a:'#d98b1f',t:'Trustworthy models for regulated domains',p:[
@@ -306,9 +325,7 @@ var $=function(i){return document.getElementById(i)};
 var chips=function(a,c){return '<div class="chips">'+a.map(function(x){return '<span class="'+(c||'')+'">'+x+'</span>'}).join('')+'</div>'};
 var li=function(a){return a&&a.length?'<ul>'+a.map(function(h){return '<li>'+h+'</li>'}).join('')+'</ul>':''};
 function logo(o){return '<div class="logo"><span>'+o.e+'</span>'+(o.logo?'<img src="assets/'+o.logo+'" alt="" onerror="this.remove()" onload="this.previousElementSibling.remove()">':'')+'</div>'}
-function row(o){var s=o.stats?'<div class="stats">'+o.stats.map(function(x){return '<div><b>'+x[0]+'</b><span>'+x[1]+'</span></div>'}).join('')+'</div>':'';
-return '<article class="job"><div>'+logo(o)+'</div><div><h3>'+o.role+(o.badge?'<span class="badge">'+o.badge+'</span>':'')+'</h3><p class="sub2">'+o.org+' · '+o.date+'</p>'+s+li(o.hl)+(o.ch?chips(o.ch):'')+'</div></article>'}
-$('exp').innerHTML=EXP.map(row).join('');
+$('exp').innerHTML=EXP.map(function(o){return '<div class="tl-co"><div class="tl-head">'+logo(o)+'<h3>'+o.org+'</h3><p class="sub2" style="margin:0">'+o.loc+' · '+o.date+'</p></div>'+o.roles.map(function(r){return '<article class="tl-item"><h4>'+r.role+(r.badge?'<span class="badge">'+r.badge+'</span>':'')+'</h4><p class="when">'+r.date+'</p><p class="tx">'+r.txt+'</p>'+(r.go?'<a class="lk see" href="'+r.go[1]+'">'+r.go[0]+' ↓</a>':'')+'</article>'}).join('')+'</div>'}).join('');
 $('edu').innerHTML=EDU.map(function(o){return '<article class="job"><div class="top">'+logo(o)+'<div><h3>'+o.role+(o.badge?'<span class="badge">'+o.badge+'</span>':'')+'</h3><p class="sub2" style="margin:0">'+o.org+' · '+o.date+'</p></div></div>'+li(o.hl)+'</article>'}).join('');
 function vis(p,d){if(!p.img)return '';return '<div class="vis"><img src="assets/'+p.img+'" alt="'+p.n+' diagram" loading="lazy" onerror="this.remove()" onload="this.parentNode.classList.add(\'ok\')"></div>'}
 function link(l){var u=l[1]||GH,ext=u.charAt(0)!='#';return '<a class="lk" href="'+u+'"'+(ext?' target="_blank" rel="noopener"':'')+'>'+l[0]+' ↗</a>'}
@@ -321,7 +338,7 @@ $('fs').innerHTML=pill('s','all','All skills','#14213d')+SK.map(function(k){retu
 $('doms').innerHTML=DOM.map(function(d){var big=d.p.filter(function(p){return p.big}),sm=d.p.filter(function(p){return !p.big});
 d.p.forEach(function(p){ALL.push({d:d.id,s:p.sk})});
 return '<div class="dom" id="d-'+d.id+'" style="--a:'+d.a+'"><div class="dh">'+(d.e?'<span class="ic">'+d.e+'</span>':'')+'<div><h3>'+d.n+'</h3><p>'+d.t+'</p></div></div>'+
-big.map(function(p,i){return '<article class="pc'+(p.rev||i%2?' rev':'')+'" data-s="'+p.sk.join(' ')+'">'+vis(p,d)+'<div class="bd"><div class="meta">'+p.tag+'</div><h4>'+p.n+'</h4><p class="d">'+p.d+'</p>'+li(p.hl)+tags(p)+link(p.l)+'</div></article>'}).join('')+
+big.map(function(p,i){return '<article class="pc'+(p.rev||i%2?' rev':'')+'"'+(p.id?' id="'+p.id+'"':'')+' data-s="'+p.sk.join(' ')+'">'+vis(p,d)+'<div class="bd"><div class="meta">'+p.tag+'</div><h4>'+p.n+'</h4><p class="d">'+p.d+'</p>'+li(p.hl)+tags(p)+link(p.l)+'</div></article>'}).join('')+
 (sm.length?'<div class="grid">'+sm.map(function(p){return '<article class="cc" data-s="'+p.sk.join(' ')+'">'+vis(p,d)+'<div class="bd"><div class="meta">'+p.tag+'</div><h4>'+p.n+'</h4><p class="d">'+p.d+'</p>'+tags(p)+link(p.l)+'</div></article>'}).join('')+'</div>':'')+'</div>'}).join('');
 function has(d,k){return ALL.some(function(p){return (d=='all'||p.d==d)&&(k=='all'||p.s.indexOf(k)>-1)})}
 function apply(){var n=0;
@@ -332,6 +349,7 @@ $('fcount').textContent=n+(n==1?' project':' projects')+(fd!='all'||fs!='all'?' 
 document.querySelector('.filters').addEventListener('click',function(e){var b=e.target.closest('.pill');if(!b||b.disabled)return;var id=b.dataset.id,d=b.dataset.k=='d';
 if(d)fd=(fd==id?'all':id);else fs=(fs==id?'all':id);apply()});
 apply();
+$('exp').addEventListener('click',function(e){var a=e.target.closest('.see');if(a&&(fd!='all'||fs!='all')){fd='all';fs='all';apply()}});
 
 /* ===== Animated background + theme toggle =====
    "dark": starfield with shooting stars (as before).
